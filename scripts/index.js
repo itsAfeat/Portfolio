@@ -247,7 +247,7 @@ function logs(logName, clear) {
             });
     }
     else {
-        $.getJSON('./logs', data => {
+        $.getJSON('../logs', data => {
             term.echo(`\nFound [[u;#fff;;]${data.length}] log[[b;;;]s]...`)
             data.forEach((d) => term.echo(`\t- ${d}`))
         })
