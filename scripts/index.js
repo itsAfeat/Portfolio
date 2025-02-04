@@ -1,10 +1,3 @@
-const cmds = {
-    "help()": ["Show this help menu", 2, false],
-    "grab()": ["Take a screenshot", 2, false],
-    "camera()": ["Show live feed from webcam", 2, false],
-    "play();pause()": ["Play or pause the live webcam feed", 0, '/']
-}
-
 const scanlines = $('.scanlines');
 const tv = $('.tv');
 function exit() {
@@ -149,21 +142,6 @@ function pause() {
     });
 }
 
-function help() {
-    term.echo("\n[[bu;#fff;;]SCHWAG menu:]")
-    Object.entries(cmds).forEach(([key, value]) => {
-        let tabAmount = parseInt(value[1]);
-
-        if (value[2] == false) {
-            term.echo(` - [[i;#fff;;]${key}]\t${"\t".repeat(tabAmount)}${value[0]}`);
-        }
-        else {
-            key = key.split(";");
-            term.echo(` - [[i;#fff;;]${key[0]}]${value[2]}[[i;#fff;;]${key[1]}]\t${"\t".repeat(tabAmount)}${value[0]}`);
-        }
-
-    });
-}
 
 function grab() {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -205,5 +183,76 @@ function clear() {
     term.clear();
 }
 
-github('jcubic/jquery.terminal');
+// Custom functions & variables
+const cmds = {
+    "help()": ["Vis denne menu", 3, false],
+    "logs(f,c)": ["Vis alle logs eller en specifik med [[i;#fff;;]f]", 2, {
+        "f": ["[string/int]", " Enten hele log navnet (ex log24) eller bare log nummeret (ex 24)"],
+        "c": ["[boolean]\t", " Ryd skærmen inden logens indhold udskrives\n"]
+    }],
+    "grab()": ["Tag et skærmbillede [[b;#e60000;;](virker ikke)", 3, false],
+    "camera()": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
+    "play()/pause()": ["Start og/eller pause webcam feed'et", 1, false]
+}
+
+function help() {
+    term.echo("\n[[bu;#fff;;]SCHWAG menu]")
+    Object.entries(cmds).forEach(([key, value]) => {
+        let tabAmount = parseInt(value[1]);
+
+        term.echo(` [[i;#fff;;]- ${key}]${"\t".repeat(tabAmount)}${value[0]}`);
+        if (value[2] != false) {
+            let paramDict = value[2];
+            Object.entries(paramDict).forEach(([param, desc]) => {
+                term.echo(`\t- [[i;#fff;;]${param}] = ${desc[0]}\t${desc[1]}`);
+            });
+        }
+
+    });
+}
+
+function logs(logName, clear) {
+    if (clear == true) { term.clear(); }
+
+    if (logName != null) {
+        let filename = isNaN(logName) ? logName : `log${logName}`;
+
+        fetch(`logs/${filename}.txt`)
+            .then(r => r.text())
+            .then(text => {
+                let lines = text.split("\n");
+                lines.forEach((l) => {
+                    let isRaw = false;
+
+                    if (l[0] == ';') {
+                        switch (l[1]) {
+                            case 'd':
+                                l = `[[b;#fff;;]${l.substring(2)}]`;
+                                break;
+                            case 't':
+                                l = `[[bu;#fff;;]${l.substring(2)}]`;
+                                break;
+                            case 'r':
+                                l = l.substring(2);
+                                isRaw = true;
+                                break;
+                        }
+                    }
+
+                    l = l.replaceAll('\\t', '\t')
+                        .replaceAll('\\n', '\n');
+
+                    term.echo(l, { raw: isRaw });
+                });
+            });
+    }
+    else {
+        $.getJSON('./logs', data => {
+            term.echo(`\nFound [[u;#fff;;]${data.length}] log[[b;;;]s]...`)
+            data.forEach((d) => term.echo(`\t- ${d}`))
+        })
+    }
+}
+
+// github('jcubic/jquery.terminal');
 cssVars(); // ponyfill
