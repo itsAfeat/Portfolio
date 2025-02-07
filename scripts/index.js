@@ -263,7 +263,7 @@ function log(filename, clear) {
                     l = l.replaceAll('\\t', '\t')
                         .replaceAll('\\n', '\n');
 
-                    term.echo(l, { raw: isRaw });
+                    term.echo(`\n${l}`, { raw: isRaw });
                 });
             });
     }
