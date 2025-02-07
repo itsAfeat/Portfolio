@@ -9,11 +9,11 @@ var pdfFNames = [];
 var logFNames = [];
 
 $(document).ready(() => {
-    $.getJSON("./pdfs", data => {
-        data.forEach(d => pdfFNames.push(d));
+    $.getJSON("https://api.github.com/repos/itsafeat/Portfolio/contents/pdfs/", data => {
+        data.forEach(d => pdfFNames.push(d.name));
     });
-    $.getJSON("./logs", data => {
-        data.forEach(d => logFNames.push(d));
+    $.getJSON("https://api.github.com/repos/itsafeat/Portfolio/contents/logs/", data => {
+        data.forEach(d => logFNames.push(d.name));
     });
 });
 
