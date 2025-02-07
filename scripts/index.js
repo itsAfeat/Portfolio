@@ -5,6 +5,32 @@ function exit() {
     term.disable();
 }
 
+var pdfFNames = [];
+var logFNames = [];
+
+$(document).ready(() => {
+    $.getJSON("./pdfs", data => {
+        data.forEach(d => pdfFNames.push(d));
+    });
+    $.getJSON("./logs", data => {
+        data.forEach(d => logFNames.push(d));
+    });
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const calendarElm = document.getElementById('calendar');
+//     const calendar = new FullCalendar.Calendar(calendarElm,
+//         {
+//             initialView: 'TimeGridWeek',
+//             headerToolBar: {
+//                 left: 'prev,next today',
+//                 center: 'title',
+//                 right: 'timeGridWeek,timeGridDay'
+//             }
+//         });
+//     calendar.render();
+// });
+
 // ref: https://stackoverflow.com/q/67322922/387194
 let __EVAL = (s) => eval(`void (__EVAL = ${__EVAL}); ${s}`);
 const sound = new Audio('https://cdn.jsdelivr.net/gh/jcubic/static@master/assets/mech-keyboard-keystroke_3.mp3')
@@ -36,7 +62,7 @@ const term = $('#terminal').terminal(function (command, term) {
     // detect iframe codepen preview
     enabled: $('body').attr('onload') === undefined,
     keydown() {
-        sound.play();
+        // sound.play();
     },
     onInit: function () {
         set_size();
@@ -50,7 +76,7 @@ const term = $('#terminal').terminal(function (command, term) {
        ░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░ 
 ░▒▓███████▓▒░ ░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓█████████████▓▒░░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░  
   
-  \`\`[[i;;;]Det ligesom et normalt portefølje, men... terminal]´´ - mig B^)\n`;
+  \`\`[[i;#aaa;;command]Det ligesom et normalt portefølje, men... terminal]´´ - mig B^)\n`;
         }, { formatters: false });
         this.echo('Type [[b;#fff;;command]exit] to see turn off animation.');
         this.echo('Type and execute [[b;#fff;;command]grab()] function to get the scre' +
@@ -186,10 +212,16 @@ function clear() {
 // Custom functions & variables
 const cmds = {
     "help()": ["Vis denne menu", 3, false],
-    "logs(f,c)": ["Vis alle logs eller en specifik med [[i;#fff;;]f]", 2, {
-        "f": ["[string/int]", " Enten hele log navnet (ex log24) eller bare log nummeret (ex 24)"],
-        "c": ["[boolean]\t", " Ryd skærmen inden logens indhold udskrives\n"]
+    "log(f,c)": ["Vis alle logs eller en specifik med [[i;#fff;;]f]", 3, {
+        "f": ["[string/int]", "Enten hele log navnet (ex log24) eller bare log nummeret (ex 24)"],
+        "c": ["[boolean]\t", "Ryd skærmen inden logens indhold udskrives\n"]
     }],
+
+    "pdf(f,c)": ["Vis alle pdf'er eller en specifik med [[i;#fff;;]f]", 3, {
+        "f": ["[string]", "PDF navnet (ex gruppekontrakt), eller index'et"],
+        "c": ["[boolean]", "Ryd skærmen inden logens indhold udskrives\n"]
+    }],
+
     "grab()": ["Tag et skærmbillede [[b;#e60000;;](virker ikke)", 3, false],
     "camera()": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
     "play()/pause()": ["Start og/eller pause webcam feed'et", 1, false]
@@ -207,17 +239,20 @@ function help() {
                 term.echo(`\t- [[i;#fff;;]${param}] = ${desc[0]}\t${desc[1]}`);
             });
         }
-
     });
+
+    term.echo("\n[[b;#fff;;]!OBS!]\nDette fungere som en javascript terminal, det vil sige, at skrive du console.log('bøvs') og inspicerer konsolen, vil der stå bøvs.");
+    term.echo("Det er derfor vigtigt, at når der indskrives parametre, og det fx et er et filnavn (en string) så skal \"gåseøjne\" rundt om.");
+    term.echo("Samtidigt, så er alle kommandoerne (på nær 'clear') en funktion der kaldes, og man skal derfor huske [[b;#fff;;]()] bag den.")
 }
 
-function logs(logName, clear) {
-    if (clear == true) { term.clear(); }
+function log(filename, clear) {
+    if (clear) { term.clear(); }
 
-    if (logName != null) {
-        let filename = isNaN(logName) ? logName : `log${logName}`;
+    if (filename != null) {
+        let fname = isNaN(filename) ? filename : `log${filename}`;
 
-        fetch(`logs/${filename}.txt`)
+        fetch(`logs/${fname}.txt`)
             .then(r => r.text())
             .then(text => {
                 let lines = text.split("\n");
@@ -247,12 +282,24 @@ function logs(logName, clear) {
             });
     }
     else {
-        $.getJSON('https://itsafeat.github.io/Portfolio/logs/', data => {
-            term.echo(`\nFound [[u;#fff;;]${data.length}] log[[b;;;]s]...`)
-            data.forEach((d) => term.echo(`\t- ${d}`))
-        })
+        term.echo(`\nFound [[u;#fff;;]${logFNames.length}] log(s)...`);
+        logFNames.forEach(fn => {
+            term.echo(`\t- ${fn}`);
+        });
     }
 }
 
-// github('jcubic/jquery.terminal');
+function pdf(filename, clear) {
+    if (clear) { term.clear(); }
+
+    if (filename != null) {
+        let fname = isNaN(filename) ? (filename.includes('.pdf') ? filename : `${filename}.pdf`) : pdfFNames[filename];
+        term.echo(`<center><iframe class="pdf" src="pdfs/${fname}" width="800" height="800"></iframe></center>`, { raw: true });
+    }
+    else {
+        term.echo(`\nFound [[u;#fff;;]${pdfFNames.length}] pdf(s)...`);
+        for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] ${pdfFNames[i]}`); }
+    }
+}
+
 cssVars(); // ponyfill
