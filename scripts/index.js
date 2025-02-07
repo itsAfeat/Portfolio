@@ -8,12 +8,37 @@ function exit() {
 var pdfFNames = [];
 var logFNames = [];
 
+const apiUrl = "https://api.github.com/repos/itsafeat/Portfolio/contents/";
+const token = "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";
+
 $(document).ready(() => {
-    $.getJSON("https://api.github.com/repos/itsafeat/Portfolio/contents/pdfs/", data => {
-        data.forEach(d => pdfFNames.push(d.name));
+    $.ajax({
+        url: `${apiUrl}pdfs/`,
+        headers: {
+            "Authorization": `token ${token}`,
+            "Accept": "application/vnd.github.v3+json"
+        },
+        success: data => {
+            pdfFNames = [];
+            data.forEach(d => pdfFNames.push(d.name));
+        },
+        error: err => {
+            console.error("Error fetching PDFs:", err);
+        }
     });
-    $.getJSON("https://api.github.com/repos/itsafeat/Portfolio/contents/logs/", data => {
-        data.forEach(d => logFNames.push(d.name));
+    $.ajax({
+        url: `${apiUrl}logs/`,
+        headers: {
+            "Authorization": `token ${token}`,
+            "Accept": "application/vnd.github.v3+json"
+        },
+        success: data => {
+            logFNames = [];
+            data.forEach(d => logFNames.push(d.name));
+        },
+        error: err => {
+            console.error("Error fetching logs:", err);
+        }
     });
 });
 
@@ -243,27 +268,30 @@ function log(filename, clear) {
             .then(text => {
                 let lines = text.split("\n");
                 lines.forEach((l) => {
-                    let isRaw = false;
+                    if (lines.indexOf(l) == 0) { term.echo(""); }
+                    if (l && l.trim()) {
+                        let isRaw = false;
 
-                    if (l[0] == ';') {
-                        switch (l[1]) {
-                            case 'd':
-                                l = `[[b;#fff;;]${l.substring(2)}]`;
-                                break;
-                            case 't':
-                                l = `[[bu;#fff;;]${l.substring(2)}]`;
-                                break;
-                            case 'r':
-                                l = l.substring(2);
-                                isRaw = true;
-                                break;
+                        if (l[0] == ';') {
+                            switch (l[1]) {
+                                case 'd':
+                                    l = `[[b;#fff;;]${l.substring(2)}]`;
+                                    break;
+                                case 't':
+                                    l = `[[bu;#fff;;]${l.substring(2)}]`;
+                                    break;
+                                case 'r':
+                                    l = l.substring(2);
+                                    isRaw = true;
+                                    break;
+                            }
                         }
+
+                        l = l.replaceAll('\\t', '\t')
+                            .replaceAll('\\n', '\n');
+
+                        term.echo(l, { raw: isRaw });
                     }
-
-                    l = l.replaceAll('\\t', '\t')
-                        .replaceAll('\\n', '\n');
-
-                    term.echo(`\n${l}`, { raw: isRaw });
                 });
             });
     }
