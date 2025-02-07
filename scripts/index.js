@@ -17,20 +17,6 @@ $(document).ready(() => {
     });
 });
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const calendarElm = document.getElementById('calendar');
-//     const calendar = new FullCalendar.Calendar(calendarElm,
-//         {
-//             initialView: 'TimeGridWeek',
-//             headerToolBar: {
-//                 left: 'prev,next today',
-//                 center: 'title',
-//                 right: 'timeGridWeek,timeGridDay'
-//             }
-//         });
-//     calendar.render();
-// });
-
 // ref: https://stackoverflow.com/q/67322922/387194
 let __EVAL = (s) => eval(`void (__EVAL = ${__EVAL}); ${s}`);
 const sound = new Audio('https://cdn.jsdelivr.net/gh/jcubic/static@master/assets/mech-keyboard-keystroke_3.mp3')
