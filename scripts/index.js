@@ -16,7 +16,9 @@ $(document).ready(() => {
         type: "GET",
         success: data => {
             pdfFNames = [];
-            String(data).substring(0, data.length).split(';').forEach(d => pdfFNames.push(d));
+            String(data).substring(0, data.length).split(';').forEach(d => {
+                pdfFNames.push(d)
+            });
         },
         error: err => {
             console.error("Error fetching PDFs:", err);
@@ -27,7 +29,9 @@ $(document).ready(() => {
         type: "GET",
         success: data => {
             logFNames = [];
-            String(data).substring(0, data.length).split(';').forEach(d => logFNames.push(d));
+            String(data).substring(0, data.length).split(';').forEach(d => {
+                logFNames.push(d)
+            });
         },
         error: err => {
             console.error("Error fetching logs:", err);
