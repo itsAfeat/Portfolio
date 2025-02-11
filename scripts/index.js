@@ -8,19 +8,15 @@ function exit() {
 var pdfFNames = [];
 var logFNames = [];
 
-const apiUrl = "https://api.github.com/repos/itsafeat/Portfolio/contents/";
-const token = "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";
+const apiUrl = "https://p0rtf0l10-4p1.netlify.app/api/";
 
 $(document).ready(() => {
     $.ajax({
         url: `${apiUrl}pdfs/`,
-        headers: {
-            "Authorization": `token ${token}`,
-            "Accept": "application/vnd.github.v3+json"
-        },
         success: data => {
             pdfFNames = [];
-            data.forEach(d => pdfFNames.push(d.name));
+            console.log(data);
+            // data.forEach(d => pdfFNames.push(d.name));
         },
         error: err => {
             console.error("Error fetching PDFs:", err);
@@ -28,13 +24,10 @@ $(document).ready(() => {
     });
     $.ajax({
         url: `${apiUrl}logs/`,
-        headers: {
-            "Authorization": `token ${token}`,
-            "Accept": "application/vnd.github.v3+json"
-        },
         success: data => {
             logFNames = [];
-            data.forEach(d => logFNames.push(d.name));
+            console.log(data);
+            // data.forEach(d => logFNames.push(d.name));
         },
         error: err => {
             console.error("Error fetching logs:", err);
