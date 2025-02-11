@@ -16,8 +16,7 @@ $(document).ready(() => {
         type: "GET",
         success: data => {
             pdfFNames = [];
-            console.log(data);
-            // data.forEach(d => pdfFNames.push(d.name));
+            String(data).substring(0, data.length).split(';').forEach(d => pdfFNames.push(d));
         },
         error: err => {
             console.error("Error fetching PDFs:", err);
@@ -28,8 +27,7 @@ $(document).ready(() => {
         type: "GET",
         success: data => {
             logFNames = [];
-            console.log(data);
-            // data.forEach(d => logFNames.push(d.name));
+            String(data).substring(0, data.length).split(';').forEach(d => logFNames.push(d));
         },
         error: err => {
             console.error("Error fetching logs:", err);
