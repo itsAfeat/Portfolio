@@ -13,6 +13,7 @@ const apiUrl = "https://p0rtf0l10-4p1.netlify.app/api/";
 $(document).ready(() => {
     $.ajax({
         url: `${apiUrl}pdfs/`,
+        type: "GET",
         success: data => {
             pdfFNames = [];
             console.log(data);
@@ -24,6 +25,7 @@ $(document).ready(() => {
     });
     $.ajax({
         url: `${apiUrl}logs/`,
+        type: "GET",
         success: data => {
             logFNames = [];
             console.log(data);
