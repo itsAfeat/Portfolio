@@ -37,6 +37,8 @@ $(document).ready(() => {
             console.error("Error fetching logs:", err);
         }
     });
+
+    flicker();
 });
 
 // ref: https://stackoverflow.com/q/67322922/387194
@@ -86,7 +88,7 @@ const term = $('#terminal').terminal(function (command, term) {
   
   \`\`[[i;#aaa;;command]Det ligesom et normalt portefølje, men... terminal]´´ - mig B^)\n`;
         }, { formatters: false });
-        this.echo('Skriv [[b;#fff;;command]help] for at se tilgængelige kommandoer');
+        this.echo('Skriv [[b;#fff;;command]help] for at se tilgængelige kommandoer. [[b;#fff;;command]pdf] for at se pdf\'er eller [[b;#fff;command]log] for logs.')
         // this.echo('Type [[b;#fff;;command]exit] to see turn off animation.');
         // this.echo('Type and execute [[b;#fff;;command]grab()] function to get the scre' +
         //     'enshot from your camera');

@@ -6,14 +6,15 @@ const cmds = {
     }],
 
     "pdf(f,c)": ["Vis alle pdf'er eller en specifik med [[i;#fff;;]f]", 3, {
-        "f": ["[string]", "PDF navnet (ex gruppekontrakt), eller index'et"],
-        "c": ["[boolean]", "Ryd skærmen inden logens indhold udskrives\n"]
+        "f": ["[string/int]", "PDF navnet (ex gruppekontrakt), eller index'et"],
+        "c": ["[boolean]\t", "Ryd skærmen inden logens indhold udskrives\n"]
     }],
 
     "flicker(s)": ["Slå TV effekt til/fra. Dette kan være rart at slå fra når PDF'er læses", 2, {
-        "s": ["[boolean]", "true/false alt efter om effekten skal tændes eller ej\n"]
+        "s": ["[boolean]\t", "true/false alt efter om effekten skal tændes eller ej\n"]
     }],
 
+    "clear": ["Ryd skærmen", 3, false],
     "grab": ["Tag et skærmbillede [[b;#e60000;;](virker ikke)", 4, false],
     "camera": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
     "play/pause": ["Start og/eller pause webcam feed'et", 2, false]
@@ -38,7 +39,7 @@ function help() {
         }
     });
 
-    term.echo("\n[[b;#fff;;]!OBS!]\nAlle parametre er 'optional'")
+    term.echo("\n[[b;#fff;;]!OBS!]\nAlle parametre er 'optional'.");
 
     term.echo("\n[[b;#fff;;]!OBS OBS!]\nDette fungere som en javascript terminal, det vil sige, at skrive du console.log('bøvs') og inspicerer konsolen, vil der stå bøvs.");
     term.echo("Det er derfor vigtigt, at når der indskrives parametre, og det fx et er et filnavn (en string) så skal \"gåseøjne\" rundt om.");
@@ -84,7 +85,7 @@ function log(filename, clear) {
             });
     }
     else {
-        term.echo(`\nFound [[u;#fff;;]${logFNames.length}] log(s)...`);
+        term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...`);
         logFNames.forEach(fn => {
             term.echo(`\t- ${fn}`);
         });
@@ -99,7 +100,7 @@ function pdf(filename, clear) {
         term.echo(`<center><iframe class="pdf" src="pdfs/${fname}" width="800" height="800"></iframe></center>`, { raw: true });
     }
     else {
-        term.echo(`\nFound [[u;#fff;;]${pdfFNames.length}] pdf(s)...`);
+        term.echo(`\nFandt [[u;#fff;;]${pdfFNames.length}] pdf'er...`);
         for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] ${pdfFNames[i]}`); }
     }
 }
