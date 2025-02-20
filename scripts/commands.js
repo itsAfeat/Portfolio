@@ -10,10 +10,19 @@ const cmds = {
         "c": ["[boolean]", "Ryd skærmen inden logens indhold udskrives\n"]
     }],
 
+    "flicker(s)": ["Slå TV effekt til/fra. Dette kan være rart at slå fra når PDF'er læses", 3, {
+        "s": ["[boolean]", "true/false alt efter om effekten skal tændes eller ej\n"]
+    }],
+
     "grab()": ["Tag et skærmbillede [[b;#e60000;;](virker ikke)", 3, false],
     "camera()": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
     "play()/pause()": ["Start og/eller pause webcam feed'et", 1, false]
 }
+
+const flickElm = document.getElementById('flick');
+const scannElm = document.getElementById('scann');
+const noiseElm = document.getElementById('noise');
+var flickerState = true;
 
 function help() {
     term.echo("\n[[bu;#fff;;]SCHWAG menu]")
@@ -90,5 +99,21 @@ function pdf(filename, clear) {
     else {
         term.echo(`\nFound [[u;#fff;;]${pdfFNames.length}] pdf(s)...`);
         for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] ${pdfFNames[i]}`); }
+    }
+}
+
+function flicker(state) {
+    if (state != null) { flickerState = Boolean(state); }
+    else { flickerState = !flickerState }
+
+    if (flickerState) {
+        flickElm.classList.add("flicker");
+        scannElm.classList.add("scanlines");
+        noiseElm.classList.add("noise");
+    }
+    else {
+        flickElm.classList.remove("flicker");
+        scannElm.classList.remove("scanlines");
+        noiseElm.classList.remove("noise");
     }
 }
