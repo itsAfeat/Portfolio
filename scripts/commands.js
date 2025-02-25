@@ -1,7 +1,7 @@
 const cmds = {
     "help": ["Vis denne menu", 4, false],
     "log(f,c)": ["Vis alle logs eller en specifik med [[i;#fff;;]f]", 3, {
-        "f": ["[string/int]", "Enten hele log navnet (ex log24) eller bare log nummeret (ex 24)"],
+        "f": ["[string/int]", "Enten hele log navnet (ex log24) eller index'et"],
         "c": ["[boolean]\t", "Ryd skærmen inden logens indhold udskrives\n"]
     }],
 
@@ -47,13 +47,26 @@ function help() {
     term.echo("Samtidigt, så er alle kommandoerne en funktion der bliver kaldt. Skal der ingen parametre med kan man undvære paranteserne.")
 }
 
+function pdf(filename, clear) {
+    if (clear) { term.clear(); }
+
+    if (filename != null) {
+        let fname = isNaN(filename) ? (filename.includes('.pdf') ? filename : `${filename}.pdf`) : pdfFNames[filename];
+        term.echo(`<center><iframe class="pdf" src="pdfs/${fname}" width="800" height="800"></iframe></center>`, { raw: true });
+    }
+    else {
+        term.echo(`\nFandt [[u;#fff;;]${pdfFNames.length}] pdf'er...`);
+        for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] ${pdfFNames[i]}`); }
+    }
+}
+
 function log(filename, clear) {
     if (clear) { term.clear(); }
 
     if (filename != null) {
-        let fname = isNaN(filename) ? filename : `log${filename}`;
+        let fname = isNaN(filename) ? `${filename}.txt` : String(logFNames[filename]);
 
-        fetch(`logs/${fname}.txt`)
+        fetch(`logs/${fname}`)
             .then(r => r.text())
             .then(text => {
                 let lines = text.split("\n");
@@ -74,6 +87,9 @@ function log(filename, clear) {
                                     l = l.substring(2);
                                     isRaw = true;
                                     break;
+                                case 's':
+                                    l = `[[i;#777;;]${l.substring(2)}]`;
+                                    break;
                             }
                         }
 
@@ -87,22 +103,7 @@ function log(filename, clear) {
     }
     else {
         term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...`);
-        logFNames.forEach(fn => {
-            term.echo(`\t- ${fn}`);
-        });
-    }
-}
-
-function pdf(filename, clear) {
-    if (clear) { term.clear(); }
-
-    if (filename != null) {
-        let fname = isNaN(filename) ? (filename.includes('.pdf') ? filename : `${filename}.pdf`) : pdfFNames[filename];
-        term.echo(`<center><iframe class="pdf" src="pdfs/${fname}" width="800" height="800"></iframe></center>`, { raw: true });
-    }
-    else {
-        term.echo(`\nFandt [[u;#fff;;]${pdfFNames.length}] pdf'er...`);
-        for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] ${pdfFNames[i]}`); }
+        for (let i = 0; i < logFNames.length; i++) { term.echo(`\t[${i}] ${logFNames[i]}`); }
     }
 }
 
