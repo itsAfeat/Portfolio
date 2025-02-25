@@ -1,0 +1,54 @@
+;tCrazy log #001 - Pipeline
+;sHvad det kræver, at tegne en trekant...
+;d\n21/02-2025
+;r<hr/>
+
+Så efter, at ha' læst en masse skidt om Vulkan, virker det meget mere...
+Verbose og mere lige til end andre API'er som DirectX. Nedenunder ses det der skal gøres for at tegne en trekant:
+;s(dette er en væsentligt simplificeret udgave)\n
+
+\t1. Lav en 'VkInstance', og vælg derefter en understøttet enhed (kaldet 'VkPhysicalDevice').
+\t2. Nu når hardwaret er valgt, skal man lave sine logiske enheder ('VkDevice').
+\t   Det er igennem den at man beskriver hvilke 'VkPhysicalDeviceFeatures'[1] man kommer
+\t   til at bruge, som multi viewport eller 64 bit int og floats.\n
+\t   Det er her man også vil lave sine queues (igennem 'VkQueue' objekter). De fleste
+\t   handlinger man laver i Vulkan, som tegne kommandoer, hukommelses operationer osv.
+\t   bliver kørt asynkront ved at man "submitter" dem til en 'VkQueue'[2].\n
+\t3. For at lave et vindue hvorpå vi kan vise vores meeeget smukke trekant, skal vi bruge
+\t   et seperate bibliotek som GLFW (eller SDL, men jeg bruger GLFW så...).
+\t4. Vinduet skal bruge to komponenter, et vindue surface ('VKSurfaceKHR') og en "swap chain" ('VkSwapchainKHR').
+\t   Det er swap chain'en som holder styr på hvilke billeder der er renderet, hvilke der skal til at renderes, og
+\t   hvilke som skal vises. Det er der gør double og triple buffering mulig.
+\t5. Herefter skal billedet fra vores swap chain laves om til 'VkImageView's og 'VkFramebuffer's
+\t   Et "image view" er en reference til en specifik del af et billede, og en framebuffer er en
+\t   reference til image views der skal bruges til farve, dybe osv.
+\t6. I Vulkan har du "Render passes" som beskriver typen af billeder som skal renderes, hvordan de
+\t   vil blive brugt, og hvordan deres indhold skal behandles. Da der blot skal tegnes en simpel
+\t   trekant, skal der kun bruges et billede som "color target", som skal "clears"(I) til en solid farve.\n
+\t   Et render pass beskriver kun hvilken billede type, så binder en VkFramebuffer specifikke billeder
+\t   til de forskellige "slots"(II).\n
+\t7. Herefter instansiere man sin pipeline(III), det er denne pipeline man fodre sine 'VkShaderModule's,
+\t   som man laver med shader byte kode samt sine render pass'.
+\t8. Normalt interegere man med sin queue ved først at lave et 'VkCommandBuffer' objekt, som i vores tilfælde
+\t   skal gøre fire ting...
+\t\t - Begynde render pass'et
+\t\t - Binde vores graphics pipeline
+\t\t - Tegne tre vektorer(IV)
+\t\t - Slutte render pass'et\n
+\t9. Vores tegnekommandoer er nu i en kommandobuffer. Hoved loop'et henter et billede med vkAcquireNextImageKHR,
+\t   udfører den tilhørende kommandobuffer med vkQueueSubmit, og viser billedet med vkQueuePresentKHR. Asynkrone
+\t   handlinger kræver "semaphore" objekter for korrekt rækkefølge: Rendering venter på billedhentning, og
+\t   visning venter på rendering.
+
+Og bum... trekant. Kig på "Vulkan log1.1 - Trekanten" for at se dette i et reelt kode eksempel.
+;sDenne log er stadig under construction
+
+;r<hr/>
+\t(I)   Ligesom når man "clear" en terminal
+\t(II)  Ikke helt sikker på hvad der menes med det endnu, skal jeg være helt ærlig
+\t(III) HOLY SHIT JEG SAGDE TITLEN!
+\t(IV)  Eng.: Vertices
+;r<br/><hr/>
+;tKilder
+\t[1] https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceFeatures.html
+\t[2] https://stackoverflow.com/questions/55272626/what-is-actually-a-queue-family-in-vulkan
