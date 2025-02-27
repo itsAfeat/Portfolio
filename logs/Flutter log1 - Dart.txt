@@ -1,5 +1,5 @@
-;tFlutter log #001
-;s
+;tFlutter log #001 - Dart
+;sDart, smart, karat... øh.. en Garde!
 ;d\n27/02-2025
 ;r<hr/>
 
@@ -10,8 +10,12 @@ med at læse på flutters egen hjemmeside at dart er et sprog som vil...
 Og det jo mig! :))\n
 Meget af koden ligner rigtig meget C# med keywords som 'await', '@override', '?' osv.
 En ting som virker ret gangster er, at jeg ej længere skal skrive hele
-'Console.WriteLine', men bare 'print'.
+'Console.WriteLine', men bare 'print'.\n
+Og så er det strongly typed, hvilket jeg rigtig godt kan lide, istedet for at skulle
+gætte(I) hvilken datatype man får ud af noget.
 
+;r<hr/>
+\t(I) Eller ihvertfald sidde og studere sin kode meget mere
 ;r<br/><hr/>
 ;tKilder
 \t[1] https://dartpad.dev/
