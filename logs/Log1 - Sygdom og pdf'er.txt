@@ -1,0 +1,23 @@
+;tCrazy log #001 - Sygdom og pdf'er
+;sAchoooo!
+;d\n14/02-2025
+;r<hr/>
+
+Efter at ha' lagt syg hele ugen, samt ugen inden, har det meste af tiden
+gået med at læse op, tjekke kode eksempler og se videoer... mest videoer,
+da de fleste hjemmesider er kridhvide, hvilket gør pisse ondt i øjnene
+når man ligger med hovedpine.
+
+;r<br/><hr/>
+;tKilder
+;sVideoer
+\t[1] https://www.youtube.com/watch?v=_riranMmtvI
+\t[2] https://www.youtube.com/watch?v=2NVlG9TFT1c
+\t[3] https://www.youtube.com/watch?v=1xipg02Wu8s
+\t[4] https://www.youtube.com/watch?v=lHhRhPV--G0
+\t[5] https://www.youtube.com/watch?v=NrO0CJCbYLA
+;s\nHjemmesider/artikler
+\t[6] https://vulkan-tutorial.com/Overview
+\t[7] https://vulkan-tutorial.com/Development_environment
+\t[8] https://github.com/flutter/samples
+\t[9] https://dart.dev/language

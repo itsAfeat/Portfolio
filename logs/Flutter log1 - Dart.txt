@@ -1,0 +1,18 @@
+;tFlutter log #001
+;s
+;d\n27/02-2025
+;r<hr/>
+
+Imodsætning til C++ (Vulkan), så har jeg ikke sat med dart før, så jeg har brugt
+det meste af ugen på, at fjolle rundt inde på dartpad[1]. Dog, så startede jeg ud
+med at læse på flutters egen hjemmeside at dart er et sprog som vil...
+"... look familiar to anyone who's written ... any other C-like language."[2]
+Og det jo mig! :))\n
+Meget af koden ligner rigtig meget C# med keywords som 'await', '@override', '?' osv.
+En ting som virker ret gangster er, at jeg ej længere skal skrive hele
+'Console.WriteLine', men bare 'print'.
+
+;r<br/><hr/>
+;tKilder
+\t[1] https://dartpad.dev/
+\t[2] https://docs.flutter.dev/get-started/fundamentals/dart

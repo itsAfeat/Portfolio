@@ -1,9 +1,0 @@
-;tCrazy log #001
-
-;d04/02-2025
-;r<hr/>
-
-Jeg kan rigtig godt lide Banco Del Mutuo Soccorso. Her er en funny meme, jeg lavede om dem.
-\tHvad synes du om den?
-
-;r<img src="images/banco.png"></img>

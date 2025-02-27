@@ -1,10 +1,10 @@
-;tCrazy log #001 - Pipeline
+;tVulkan log #001 - Pipeline
 ;sHvad det kræver, at tegne en trekant...
 ;d\n21/02-2025
 ;r<hr/>
 
-Så efter, at ha' læst en masse skidt om Vulkan, virker det meget mere...
-Verbose og mere lige til end andre API'er som DirectX. Nedenunder ses det der skal gøres for at tegne en trekant:
+Så efter, at ha' læst en masse skidt om Vulkan, virker det meget mere... verbose og mere
+lige til end andre API'er som DirectX. Nedenunder ses det der skal gøres for at tegne en trekant:
 ;s(dette er en væsentligt simplificeret udgave)\n
 
 \t1. Lav en 'VkInstance', og vælg derefter en understøttet enhed (kaldet 'VkPhysicalDevice').
