@@ -122,3 +122,15 @@ function flicker(state) {
         noiseElm.classList.remove("noise");
     }
 }
+
+function minge() {
+    clear();
+    term.echo(`
+        <center>
+            <img src="minge.png" style="border: 15px ridge #cc00cc"></img>
+            <br/>
+            <h2>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h2>
+        </center>`,
+        { raw: true }
+    );
+}

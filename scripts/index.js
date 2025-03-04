@@ -19,6 +19,12 @@ $(document).ready(() => {
             String(data).substring(0, data.length - 1).split(';').forEach(d => {
                 pdfFNames.push(d)
             });
+
+            let pdfsText = document.getElementById('pdfsText')
+            pdfsText.innerHTML = "Loading PDFs[&#10004;]";
+            pdfsText.style["color"] = "green";
+
+            setTimeout(() => { pdfsText.remove(); }, 3000);
         },
         error: err => {
             console.error("Error fetching PDFs:", err);
@@ -32,6 +38,12 @@ $(document).ready(() => {
             String(data).substring(0, data.length - 1).split(';').forEach(d => {
                 logFNames.push(d)
             });
+
+            let logsText = document.getElementById('logsText')
+            logsText.innerHTML = "Loading logs[&#10004;]";
+            logsText.style["color"] = "green";
+
+            setTimeout(() => { logsText.remove(); }, 3000);
         },
         error: err => {
             console.error("Error fetching logs:", err);
