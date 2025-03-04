@@ -20,7 +20,7 @@ Vi har samtidigt fået lavet et fint Scrum board, hvor vi har fået lavet nogle 
 opgaver, for at få os sparket igang, som wireframe og DB diagramer.
 
 ;r<hr/>
-\t(I) Altsammen i PlantUML ◝(ᵔᗜᵔ)◜
+\t(I) Altsammen i PlantUML (๑ᵔ⤙ᵔ๑)
 ;r<br/><hr/>
 ;tKilder
 \t[1] https://www.discogs.com/
