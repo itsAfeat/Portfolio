@@ -19,7 +19,7 @@ const cmds = {
     "camera": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
     "play/pause": ["Start og/eller pause webcam feed'et", 2, false],
     "exit": ["Vis 'exit' animation", 4, false],
-    "minge": ["minge", 4, false]
+    "minge": ["Minge... min Oblivion karakter (han er en altmer)", 3, false]
 }
 
 const flickElm = document.getElementById('flick');
@@ -128,9 +128,9 @@ function minge() {
     clear();
     term.echo(`
         <center>
-            <img src="minge.png" style="border: 15px ridge #cc00cc"></img>
             <br/>
-            <h2>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h2>
+            <img src="minge.png" style="border: 15px ridge #cc00cc"></img>
+            <h1>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
         </center>`,
         { raw: true }
     );
