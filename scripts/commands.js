@@ -18,7 +18,8 @@ const cmds = {
     "grab": ["Tag et skærmbillede [[b;#e60000;;](virker ikke)", 4, false],
     "camera": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
     "play/pause": ["Start og/eller pause webcam feed'et", 2, false],
-    "exit": ["Vis 'exit' animation", 4, false]
+    "exit": ["Vis 'exit' animation", 4, false],
+    "minge": ["minge", 4, false]
 }
 
 const flickElm = document.getElementById('flick');
