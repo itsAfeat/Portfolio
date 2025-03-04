@@ -1,4 +1,4 @@
-;tFlutter log #001 - Dart
+;tLog #002 (Flutter) - Dart
 ;sDart, smart, karat... øh.. en Garde!
 ;d\n27/02-2025
 ;r<hr/>

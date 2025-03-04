@@ -1,0 +1,27 @@
+;tLog #003 (Gruppe) - Artefakter
+;sPlantUML, my beloved <3
+;d\n03/03-2025
+;r<hr/>
+
+;r<b>Endelig!</b>
+Vi er endelig kommet ordenligt igang med gruppe projektet. Og jeg har brugt
+den sidste stykke tid på, at planlægge, og mest af alt at lave artefakter.
+Bo, vores PO, vil bl.a. gerne have muligheden for at kunne opdatere hans
+Discogs[1] katalog og inventar nemt og hurtigt. Discogs har en vidunderlig
+API[2] hvorigennem vi kan gøre ALT hvad vi kunne drømme om plus moms. Jeg har
+fået lavet en fin domænemodel samt DCD(I) over hvordan man kunne gemme diverse
+plader og deres info, disse artefakter ses forneden.
+
+;t\nDomænemodel & DCD
+;r<img src="images/Domænemodel.png" style="margin:1em;height:30em;float:left"></img>
+;r<img src="images/DCD.png" style="margin:1em;height:30em"></img>
+
+Vi har samtidigt fået lavet et fint Scrum board, hvor vi har fået lavet nogle små
+opgaver, for at få os sparket igang, som wireframe og DB diagramer.
+
+;r<hr/>
+\t(I) Altsammen i PlantUML ◝(ᵔᗜᵔ)◜
+;r<br/><hr/>
+;tKilder
+\t[1] https://www.discogs.com/
+\t[2] https://www.discogs.com/developers/
