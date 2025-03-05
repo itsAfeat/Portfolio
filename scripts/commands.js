@@ -124,9 +124,11 @@ function flicker(state) {
     }
 }
 
-function minge() {
+function minge(option) {
     clear();
-    if (Math.floor(Math.random() * 10) < 5) {
+
+    let opt = Boolean(option == null ? Math.floor(Math.random() * 2) : option);
+    if (opt) {
         term.echo(`
             <center>
                 <img id="mingeGif" src="minge/minge.png" style="border: 15px ridge #cc00cc"></img>
