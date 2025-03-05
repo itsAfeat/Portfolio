@@ -126,16 +126,25 @@ function flicker(state) {
 
 function minge() {
     clear();
-    term.echo(`
-        <center>
-            <br/>
-            <video autoplay style="border: 15px ridge #cc00cc">
-                <source src="minge/movie.mp4" type="video/mp4">
-                Your browser does not support minge (╥﹏╥)
-            </video>
-            <!-- <img id="mingeGif" src="minge/static.png" style="border: 15px ridge #cc00cc"></img> -->
-            <h1>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
-        </center>`,
-        { raw: true }
-    );
+    if (Math.floor(Math.random() * 10) < 5) {
+        term.echo(`
+            <center>
+                <img id="mingeGif" src="minge/minge.png" style="border: 15px ridge #cc00cc"></img>
+                <h1>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
+            </center>`,
+            { raw: true }
+        );
+    }
+    else {
+        term.echo(`
+            <center>
+                <video autoplay style="border: 15px ridge #cc00cc">
+                    <source src="minge/movie.mp4" type="video/mp4">
+                    Your browser does not support minge (╥﹏╥)
+                </video>
+                <h1>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
+            </center>`,
+            { raw: true }
+        );
+    }
 }
