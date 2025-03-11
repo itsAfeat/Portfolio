@@ -8,28 +8,10 @@ function exit() {
 var pdfFNames = [];
 var logFNames = [];
 
+const apiDelay = 1500;
 const apiUrl = "https://p0rtf0l10-4p1.netlify.app/api/";
 
 $(document).ready(() => {
-    $.ajax({
-        url: `${apiUrl}pdfs/`,
-        type: "GET",
-        success: data => {
-            pdfFNames = [];
-            String(data).substring(0, data.length - 1).split(';').forEach(d => {
-                pdfFNames.push(d)
-            });
-
-            let pdfsText = document.getElementById('pdfsText')
-            pdfsText.innerHTML = "Loading PDFs[&#10004;]";
-            pdfsText.style["color"] = "green";
-
-            setTimeout(() => { pdfsText.remove(); }, 3000);
-        },
-        error: err => {
-            console.error("Error fetching PDFs:", err);
-        }
-    });
     $.ajax({
         url: `${apiUrl}logs/`,
         type: "GET",
@@ -43,10 +25,29 @@ $(document).ready(() => {
             logsText.innerHTML = "Loading logs[&#10004;]";
             logsText.style["color"] = "green";
 
-            setTimeout(() => { logsText.remove(); }, 3000);
+            setTimeout(() => { logsText.remove(); }, apiDelay);
         },
         error: err => {
             console.error("Error fetching logs:", err);
+        }
+    });
+    $.ajax({
+        url: `${apiUrl}pdfs/`,
+        type: "GET",
+        success: data => {
+            pdfFNames = [];
+            String(data).substring(0, data.length - 1).split(';').forEach(d => {
+                pdfFNames.push(d)
+            });
+
+            let pdfsText = document.getElementById('pdfsText')
+            pdfsText.innerHTML = "Loading PDFs[&#10004;]";
+            pdfsText.style["color"] = "green";
+
+            setTimeout(() => { pdfsText.remove(); }, apiDelay+250);
+        },
+        error: err => {
+            console.error("Error fetching PDFs:", err);
         }
     });
 
@@ -191,29 +192,6 @@ function pause() {
     });
 }
 
-
-function grab() {
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        term.pause();
-        const media = navigator.mediaDevices.getUserMedia(constraints);
-        media.then(function (mediaStream) {
-            const mediaStreamTrack = mediaStream.getVideoTracks()[0];
-            const imageCapture = new ImageCapture(mediaStreamTrack);
-            return imageCapture.takePhoto();
-        }).then(function (blob) {
-            term.echo('<img src="' + URL.createObjectURL(blob) + '" class="self"/>', {
-                raw: true,
-                finialize: function (div) {
-                    div.find('img').on('load', function () {
-                        URL.revokeObjectURL(this.src);
-                    });
-                }
-            }).resume();
-        }).catch(function (error) {
-            term.error('Device Media Error: ' + error);
-        });
-    }
-}
 async function pictuteInPicture() {
     const [video] = $('video');
     try {
