@@ -15,3 +15,5 @@ function getApiArray(url) {
         }
     });
 }
+
+const rawTab = () => { return "&ensp;&ensp;&ensp;&ensp;"; };
