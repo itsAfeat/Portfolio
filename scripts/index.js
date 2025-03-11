@@ -44,7 +44,7 @@ $(document).ready(() => {
             pdfsText.innerHTML = "Loading PDFs[&#10004;]";
             pdfsText.style["color"] = "green";
 
-            setTimeout(() => { pdfsText.remove(); }, apiDelay+250);
+            setTimeout(() => { pdfsText.remove(); }, apiDelay + 250);
         },
         error: err => {
             console.error("Error fetching PDFs:", err);

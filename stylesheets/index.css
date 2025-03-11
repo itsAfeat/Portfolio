@@ -244,6 +244,14 @@ a:has(> .geoImg) {
   cursor: pointer;
 }
 
+#bannerDiv {
+  float: right;
+  width: 20em;
+  height: 100%;
+  background-color: #031e11;
+  padding-right: 5px;
+}
+
 #bannerAd {
   /* float: right; */
   width: 96%;
@@ -252,6 +260,21 @@ a:has(> .geoImg) {
   border: #000 ridge 5px;
 
   text-align: justify;
+}
+
+#bannerAd>h2 {
+  color: #000;
+}
+
+#bannerAd>h2>img {
+  width: 4rem;
+  margin: 10px;
+}
+
+#bannerAd>h2>a {
+  text-decoration: none;
+  color: #000;
+  cursor: alias;
 }
 
 #bannerAd>footer {
