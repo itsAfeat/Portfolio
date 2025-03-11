@@ -133,7 +133,6 @@ function minge(option) {
         term.echo(`
             <center>
                 <img id="mingeGif" src="minge/minge.png" style="border: 15px ridge #cc00cc"></img>
-                <h1>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
             </center>`,
             { raw: true }
         );
@@ -145,9 +144,9 @@ function minge(option) {
                     <source src="minge/movie.mp4" type="video/mp4">
                     Your browser does not support minge (╥﹏╥)
                 </video>
-                <h1>Minge, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1>
             </center>`,
             { raw: true }
         );
     }
+    term.echo('<center><h1><b onclick="minge()">Minge</b>, my beloved ⸜(｡˃ ᵕ ˂ )⸝♡</h1></center>', { raw: true });
 }
