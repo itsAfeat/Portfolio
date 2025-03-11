@@ -101,11 +101,13 @@ const term = $('#terminal').terminal(function (command, term) {
   
   \`\`[[i;#aaa;;command]Det ligesom et normalt portefølje, men... terminal]´´ - mig B^)\n`;
         }, { formatters: false });
-        this.echo('Skriv <b id="clickableComm" onclick="help()">help</b> for at se tilgængelige kommandoer. <b id="clickableComm" onclick="pdf()">pdf</b> for at se pdf\'er eller <b id="clickableComm" onclick="log()">log</b> for logs.', { raw: true });
+        this.echo('Skriv <b class="clickableComm">help</b> for at se tilgængelige kommandoer. <b class="clickableComm">pdf</b> for at se pdf\'er eller <b class="clickableComm">log</b> for logs.', { raw: true });
         // this.echo('Type [[b;#fff;;command]exit] to see turn off animation.');
         // this.echo('Type and execute [[b;#fff;;command]grab()] function to get the scre' +
         //     'enshot from your camera');
         // this.echo('Type [[b;#fff;;command]camera()] to get video and [[b;#fff;;command]pause()]/[[b;#fff;;command]play()] to stop/play');
+
+        refreshClickables();
     },
     greetings: false,
     prompt: '\n#> '

@@ -296,11 +296,11 @@ a:has(> .geoImg) {
   margin: 5px;
 }
 
-#clickableComm {
+.clickableComm {
   color: white;
 }
 
-#clickableComm:hover {
+.clickableComm:hover {
   cursor: pointer;
   text-decoration: underline;
 }

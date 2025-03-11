@@ -1,11 +1,11 @@
 const cmds = {
-    "help": ["Vis denne menu", 4, false],
-    "log(f,c)": ["Vis alle logs eller en specifik med [[i;#fff;;]f]", 3, {
+    "help": ["Vis denne menu", 8, false],
+    "log(f,c)": ["Vis alle logs eller en specifik med [[i;#fff;;]f]", 4, {
         "f": ["[string/int]", "Enten hele log navnet (ex log24) eller index'et"],
         "c": ["[boolean]\t", "Ryd skærmen inden logens indhold udskrives\n"]
     }],
 
-    "pdf(f,c)": ["Vis alle pdf'er eller en specifik med [[i;#fff;;]f]", 3, {
+    "pdf(f,c)": ["Vis alle pdf'er eller en specifik med [[i;#fff;;]f]", 4, {
         "f": ["[string/int]", "PDF navnet (ex gruppekontrakt), eller index'et"],
         "c": ["[boolean]\t", "Ryd skærmen inden logens indhold udskrives\n"]
     }],
@@ -14,11 +14,11 @@ const cmds = {
         "s": ["[boolean]\t", "true/false alt efter om effekten skal tændes eller ej\n"]
     }],
 
-    "clear": ["Ryd skærmen", 3, false],
-    "camera": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 3, false],
+    "clear": ["Ryd skærmen", 7, false],
+    "camera": ["Vis et live feed fra dit webcam (brug clear for at slukke)", 6, false],
     "play/pause": ["Start og/eller pause webcam feed'et", 2, false],
-    "exit": ["Vis 'exit' animation", 4, false],
-    "minge": ["Minge... min Oblivion karakter (han er en altmer)", 3, false]
+    "exit": ["Vis 'exit' animation", 8, false],
+    "minge": ["Minge... min Oblivion karakter (han er en altmer)", 7, false]
 }
 
 const flickElm = document.getElementById('flick');
@@ -31,7 +31,7 @@ function help() {
     Object.entries(cmds).forEach(([key, value]) => {
         let tabAmount = parseInt(value[1]);
 
-        term.echo(` [[i;#fff;;]- ${key}]${"\t".repeat(tabAmount)}${value[0]}`);
+        term.echo(`- <b class="clickableComm">${key}</b>${"&ensp;".repeat(tabAmount)}${value[0]}`, { raw: true });
         if (value[2] != false) {
             let paramDict = value[2];
             Object.entries(paramDict).forEach(([param, desc]) => {
@@ -45,6 +45,8 @@ function help() {
     term.echo("\n[[b;#fff;;]!OBS OBS!]\nDette fungere som en javascript terminal, det vil sige, at skrive du console.log('bøvs') og inspicerer konsolen, vil der stå bøvs.");
     term.echo("Det er derfor vigtigt, at når der indskrives parametre, og det fx et er et filnavn (en string) så skal \"gåseøjne\" rundt om.");
     term.echo("Samtidigt, så er alle kommandoerne en funktion der bliver kaldt. Skal der ingen parametre med kan man undvære paranteserne.")
+
+    refreshClickables();
 }
 
 function pdf(filename, clear) {
