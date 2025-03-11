@@ -236,6 +236,52 @@ body {
   animation-fill-mode: forwards;
 }
 
+a:has(> .geoImg) {
+  text-decoration: none;
+}
+
+.geoImg:hover {
+  cursor: pointer;
+}
+
+#bannerAd {
+  /* float: right; */
+  width: 96%;
+  height: 98%;
+  background-image: url("../images/clouds.jpg");
+  border: #000 ridge 5px;
+
+  text-align: justify;
+}
+
+#bannerAd>footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+}
+
+#bannerAd>p {
+  margin: 1em;
+}
+
+#bannerAd>ul {
+  text-align: left;
+}
+
+#bannerAd>ul>li {
+  margin: 5px;
+}
+
+#clickableComm {
+  color: white;
+}
+
+#clickableComm:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 @keyframes opacity {
   to {
     opacity: 1;

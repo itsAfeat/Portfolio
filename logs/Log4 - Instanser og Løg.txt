@@ -1,0 +1,5 @@
+;tLog #004 (Vulkan) - Instanser og Løg
+;sVulkan er, som Trolde, ligesom løg... de har alle flere lag
+;d\n05/03-2025
+;r<hr/>
+

@@ -40,8 +40,8 @@ lige til end andre API'er som DirectX. Nedenunder ses det der skal gøres for at
 \t   handlinger kræver "semaphore" objekter for korrekt rækkefølge: Rendering venter på billedhentning, og
 \t   visning venter på rendering.
 
-Og bum... trekant. Kig på "Vulkan log1.1 - Trekanten" for at se dette i et reelt kode eksempel.
-;sDenne log er stadig under construction
+Og bum... trekant. Kig på "Vulkan logX - Trekanten" for at se dette i et reelt kode eksempel.
+;sDenne log er stadig under construction, desværre
 
 ;r<hr/>
 \t(I)   Ligesom når man "clear" en terminal

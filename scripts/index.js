@@ -100,7 +100,7 @@ const term = $('#terminal').terminal(function (command, term) {
   
   \`\`[[i;#aaa;;command]Det ligesom et normalt portefølje, men... terminal]´´ - mig B^)\n`;
         }, { formatters: false });
-        this.echo('Skriv [[b;#fff;;command]help] for at se tilgængelige kommandoer. [[b;#fff;;command]pdf] for at se pdf\'er eller [[b;#fff;command]log] for logs.')
+        this.echo('Skriv <b id="clickableComm" onclick="help()">help</b> for at se tilgængelige kommandoer. <b id="clickableComm" onclick="pdf()">pdf</b> for at se pdf\'er eller <b id="clickableComm" onclick="log()">log</b> for logs.', { raw: true });
         // this.echo('Type [[b;#fff;;command]exit] to see turn off animation.');
         // this.echo('Type and execute [[b;#fff;;command]grab()] function to get the scre' +
         //     'enshot from your camera');

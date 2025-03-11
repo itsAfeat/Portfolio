@@ -57,7 +57,7 @@ function pdf(filename, clear) {
     }
     else {
         term.echo(`\nFandt [[u;#fff;;]${pdfFNames.length}] pdf'er...`);
-        for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] ${pdfFNames[i]}`); }
+        for (let i = 0; i < pdfFNames.length; i++) { term.echo(`\t[${i}] <b id="clickableComm" onclick="pdf(${i})">${pdfFNames[i]}</b>`, { raw: true }); }
     }
 }
 
@@ -104,7 +104,7 @@ function log(filename, clear) {
     }
     else {
         term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...`);
-        for (let i = 0; i < logFNames.length; i++) { term.echo(`\t[${i}] ${logFNames[i]}`); }
+        for (let i = 0; i < logFNames.length; i++) { term.echo(`&ensp;&ensp;[${i}] <b id="clickableComm" onclick="log(${i})">${logFNames[i]}</b>`, { raw: true }); }
     }
 }
 
