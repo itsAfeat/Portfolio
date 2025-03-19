@@ -50,7 +50,7 @@ function help() {
 }
 
 function pdf(filename, clear) {
-    if (clear) { clear(); }
+    if (clear) { term.clear(); }
 
     if (filename != null) {
         let fname = isNaN(filename) ? (filename.includes('.pdf') ? filename : `${filename}.pdf`) : pdfFNames[filename];
@@ -63,7 +63,7 @@ function pdf(filename, clear) {
 }
 
 function log(filename, clear) {
-    if (clear) { clear(); }
+    if (clear) { term.clear(); }
 
     if (filename != null) {
         let fname = isNaN(filename) ? `${filename}.txt` : String(logFNames[filename]);
