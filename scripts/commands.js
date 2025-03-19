@@ -50,7 +50,7 @@ function help() {
 }
 
 function pdf(filename, clear) {
-    if (clear) { term.clear(); }
+    if (clear) { clear(); }
 
     if (filename != null) {
         let fname = isNaN(filename) ? (filename.includes('.pdf') ? filename : `${filename}.pdf`) : pdfFNames[filename];
@@ -63,7 +63,7 @@ function pdf(filename, clear) {
 }
 
 function log(filename, clear) {
-    if (clear) { term.clear(); }
+    if (clear) { clear(); }
 
     if (filename != null) {
         let fname = isNaN(filename) ? `${filename}.txt` : String(logFNames[filename]);
@@ -96,7 +96,13 @@ function log(filename, clear) {
                         }
 
                         l = l.replaceAll('\\t', '\t')
-                            .replaceAll('\\n', '\n');
+                            .replaceAll('\\n', '\n')
+                            .replace(/\[(\d+)\]/g, (_match, number) => {
+                                return isRaw ? `<b style="color:white;">{${number}}</b>` : `[[b;#fff;;]{${number}}]`;
+                            })
+                            .replace(/\(([IVXLCDM]+)\)/g, (match, _number) => {
+                                return isRaw ? `<b style="color:white;">${match}</b>` : `[[b;#fff;;]${match}]`;
+                            });
 
                         term.echo(l, { raw: isRaw });
                     }

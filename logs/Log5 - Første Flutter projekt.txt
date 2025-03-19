@@ -1,0 +1,54 @@
+;tLog #005 (Flutter) - Første Flutter projektet
+;sBaby's first Flutter
+;d\n17/03-2025
+;r<hr/>
+
+Efter en halv down periode, hvor jeg halvt crashede ud med Vulkan, har jeg
+endelig fået lavet noget produktivt i form af en "færdig" og fungerende app
+lavet i Flutter. Appen er lavet ud fra Flutters (Googles) egen codelabs
+tutorial[1] med et personligt touch for at det ikke bare var 100% kopiering. 
+
+\nDart er et nesting tungt sprog, så ens forskellige widgets og pages kan meget nemt
+begynde, at se meget rodet ud, heldigvis er der også meget autoformatering som hjælper
+på det. Forneden ses starten af appen.
+
+;t\nMain "entry point" funktionen samt MainApp klassen
+;r<img src="projects/Flutter/BabysFirstFlutter/BaldisBasics.png" style="margin:1em;height:30em;float:left"/>
+
+;sWow, se lige alle de flotte farver...
+;rPå linje 5 ses den klassiske main entry point, som næsten alle programmer <b>skal</b>
+ha', men, main funktionen er voldsom kedelig, så lad så rykke ned til linje 9 istedet.
+
+\nMainApp klassen er hvor alle indstillingerne for appen specificeres, ting som farve-
+skemaer, titel(I), programmets "context", og hvilken page der er start siden. Her har jeg
+gået ind (med hjælp fra bl.a. StackOverflow) og tilføjet flere farveskemaer, så appen
+både har en dark og light mode som bestemmes efter systemmets "theme" (linje 18-30).
+
+;t\nFlutters version af observerable
+;r<img src="projects/Flutter/BabysFirstFlutter/Notifier.png" style="margin:1em;height:10em;float:left"/>
+
+Her ses MainAppState klassen, som nedarver fra ChangeNotifier. Denne klasse fungerer
+basically på samme måde some WPFs ObserverableCollections og INotifyProperty osv. osv.
+Billedet er ikke hele klassen, blot to variabler samt en metode der ændre på den ene
+variabel og "notfier" alle widgets der hører efter.
+
+\nOg nu når vi er her, dyrk lige linje 39... det fandme frækt, at kunne lave en
+collection ved blot at give datatypen sammen med [], det er egentlig ikke nødvendigt
+at give datatypen, men jeg er C++ programmør, jeg kan godt li' at være eksplicit og
+undgå at compileren misforstår hvad det er for en datatype jeg egentlig vil have.
+
+;d\nTo be continued...
+
+;r<br/>
+;rProjektet kan findes på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Babys-First-Flutter" target="_blank">Github</a>...
+
+;r<hr/>
+;r&ensp;&ensp;&ensp;&ensp;(I) Ignorer at der står "Kedelig Klikker", det er en <s>tastefejl</s> reference til senere ¯\_(ツ)_/¯
+
+;r<br/><hr/>
+;tKilder
+\t[1] "Your first Flutter app"
+\t    Rimelig god og begynder venlig guide til Flutter, og dets utallige widgets.
+\t    Appen man laver er yderst simpel, men alligevel formår den at præsentere en
+\t    for ting som states, basal navigation m.m.
+\t    [ https://codelabs.developers.google.com/codelabs/flutter-codelab-first ]

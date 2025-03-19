@@ -5,9 +5,16 @@ function exit() {
     term.disable();
 }
 
+const repoNames = [
+        "Cloth-AR",
+        "PSX-bong",
+        "KronkOS-0.3"
+];
+
 var pdfFNames = [];
 var logFNames = [];
 
+const utf8Decoder = new TextDecoder('utf8');
 const apiDelay = 1500;
 const apiUrl = "https://p0rtf0l10-4p1.netlify.app/api/";
 
