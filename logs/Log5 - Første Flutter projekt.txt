@@ -13,7 +13,7 @@ begynde, at se meget rodet ud, heldigvis er der også meget autoformatering som 
 på det. Forneden ses starten af appen.
 
 ;t\nMain "entry point" funktionen samt MainApp klassen
-;r<img src="projects/Flutter/BabysFirstFlutter/BaldisBasics.png" style="margin:1em;height:30em;float:left"/>
+;r<img src="projects/Flutter/BabysFirstFlutter/BaldisBasics.png" style="margin:1em;height:30em"/>
 
 ;sWow, se lige alle de flotte farver...
 ;rPå linje 5 ses den klassiske main entry point, som næsten alle programmer <b>skal</b>
@@ -25,7 +25,7 @@ gået ind (med hjælp fra bl.a. StackOverflow) og tilføjet flere farveskemaer, 
 både har en dark og light mode som bestemmes efter systemmets "theme" (linje 18-30).
 
 ;t\nFlutters version af observerable
-;r<img src="projects/Flutter/BabysFirstFlutter/Notifier.png" style="margin:1em;height:10em;float:left"/>
+;r<img src="projects/Flutter/BabysFirstFlutter/Notifier.png" style="margin:1em;height:10em"/>
 
 Her ses MainAppState klassen, som nedarver fra ChangeNotifier. Denne klasse fungerer
 basically på samme måde some WPFs ObserverableCollections og INotifyProperty osv. osv.
@@ -35,15 +35,31 @@ variabel og "notfier" alle widgets der hører efter.
 \nOg nu når vi er her, dyrk lige linje 39... det fandme frækt, at kunne lave en
 collection ved blot at give datatypen sammen med [], det er egentlig ikke nødvendigt
 at give datatypen, men jeg er C++ programmør, jeg kan godt li' at være eksplicit og
-undgå at compileren misforstår hvad det er for en datatype jeg egentlig vil have.
+undgå at compileren misforstår hvad det er for en datatype jeg egentlig vil have(II).
 
-;d\nTo be continued...
+;t\nEn custom widget/component
+;r<img src="projects/Flutter/BabysFirstFlutter/BigCard.png" style="margin:1em;height:20em"/>
+
+Her ses en simpel [[i;#e81416;;]c][[i;#ffa500;;]u][[i;#faeb36;;]s][[i;#79c314;;]t][[i;#487de7;;]o][[i;#4b369d;;]m] widget/component... den laver egentlig bare en størrer
+udgave af Card widget'en, med noget ekstra padding, og så selvfølgelig bruger den
+[[u;#ddd;;]WordPair] til dens indhold istedet.
+
+\nKoden til siden hvorpå ordene bliver generet er rimelig lang, så jeg vil egentlig
+hellere lade den ligge på Github'en. Men her er den anden side i programmet.
+
+;t\nFavourites siden
+;r<img src="projects/Flutter/BabysFirstFlutter/Favoriter.png" style="margin:1em;height:20em;"/>
+
+Alt der sker her, er den viser alle elementer fra [[iu;#ddd;;]favs] listen, som ligger inde
+i ChangeNotifier'en (MainAppState), og lytter efter om den bliver trykket på.
+Hvis den gør, fjerner den elementet fra listen.
 
 ;r<br/>
-;rProjektet kan findes på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Babys-First-Flutter" target="_blank">Github</a>...
+;rHele projektet kan findes på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Babys-First-Flutter" target="_blank">Github</a>...
 
 ;r<hr/>
-;r&ensp;&ensp;&ensp;&ensp;(I) Ignorer at der står "Kedelig Klikker", det er en <s>tastefejl</s> reference til senere ¯\_(ツ)_/¯
+;r&ensp;&ensp;&ensp;&ensp;(I)&ensp;&ensp;Ignorer at der står "Kedelig Klikker", det er en <s>tastefejl</s> reference til senere ¯\_(ツ)_/¯
+\t(II) Ignorer også, at jeg bruger [[iu;#ddd;;]var] hvilket egentlig modsiger hvad jeg lige har sagt/skrevet
 
 ;r<br/><hr/>
 ;tKilder

@@ -83,7 +83,9 @@ function log(filename, clear) {
                                     l = `[[b;#fff;;]${l.substring(2)}]`;
                                     break;
                                 case 't':
-                                    l = `[[bu;#fff;;]${l.substring(2)}]`;
+                                    // l = `[[bu;#fff;;]${l.substring(2)}]`;
+                                    l = `<b id="logTitle">${l.substring(2)}</b>`
+                                    isRaw = true;
                                     break;
                                 case 'r':
                                     l = l.substring(2);

@@ -5,6 +5,7 @@
  *  scanlines based on https://blog.carbonfive.com/2015/01/07/vintage-terminal-effect-in-css3/
  *  noise solution based on Temani Afif https://codepen.io/t_afif/pen/RwyqLKZ
  */
+
 body {
   margin: 0;
   background: black;
@@ -244,6 +245,13 @@ a:has(> .geoImg) {
   cursor: pointer;
 }
 
+#logTitle {
+  color: white;
+  font-size: x-large;
+  text-decoration: underline;
+  text-shadow: #474747 -3px 5px 2px, -2px 2px 5px rgba(55, 206, 80, 0.267);
+}
+
 #bannerDiv {
   float: right;
   width: 21em;
@@ -298,11 +306,13 @@ a:has(> .geoImg) {
   margin: 5px;
 }
 
-.clickableLink,.clickableComm {
+.clickableLink,
+.clickableComm {
   color: white;
 }
 
-.clickableLink:hover,.clickableComm:hover {
+.clickableLink:hover,
+.clickableComm:hover {
   cursor: pointer;
   text-decoration: underline;
 }

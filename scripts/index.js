@@ -5,16 +5,9 @@ function exit() {
     term.disable();
 }
 
-const repoNames = [
-        "Cloth-AR",
-        "PSX-bong",
-        "KronkOS-0.3"
-];
-
 var pdfFNames = [];
 var logFNames = [];
 
-const utf8Decoder = new TextDecoder('utf8');
 const apiDelay = 1500;
 const apiUrl = "https://p0rtf0l10-4p1.netlify.app/api/";
 
@@ -81,6 +74,12 @@ const term = $('#terminal').terminal(function (command, term) {
             } else if (result !== undefined) {
                 term.echo(new String(result));
             }
+
+            if (String(command).indexOf('log') != -1) {
+                var elem = document.getElementById('logTitle');
+                if (elem != null) { elem.scrollIntoView(); }
+            }
+
         } catch (e) {
             term.error(new String(e));
         }
