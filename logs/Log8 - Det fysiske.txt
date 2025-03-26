@@ -1,0 +1,43 @@
+;tLog #008 (Vulkan) - Fysik, logik og kø kultur
+;sVent... to enheder for èn GPU?
+;d\n26/03-2025
+;r<hr/>
+
+Endelig kommer jeg til noget der ikke er så... abstrakt(I). Så man har i Vulkan physical og
+logical devices. Den fysiske(II) enhed er dit hardware[2], grafikkortet, den logiske er et
+objekt(III) man bruger til at "interface" med den fysiske[3]. Det er igennem den logiske at,
+man blandt andet laver og arbejder med [[bi;#aaa;;]queues].
+
+En applikation vil indsende arbejde(IV), i form af en command buffer, til queues[1], som fung-
+erer lidt som en kanal til GPU. Hver queue tilhører en queue family, som beskriver hvad den
+specifikke queue håndterer (graphics, computing osv.)
+
+Indtil videre, har jeg blot fået sat op de to devices, en surface hvorpå det hele gerne sk-
+ulle blive vist på et tidspunkt, og lavet en funktion der får fat i alle graphics queues.
+
+;r<br/>
+;rSom altid kan hele projektet blive fundet på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Vulkan-Swagkant" target="_blank">Github</a>...
+Jeg er igang med, at lave addition til porteføljet, hvorigennem alle projekt links osv. vil
+blive samlet.
+
+;r<hr/>
+\t(I)   Queues er lidt mærkelige...
+\t(II)  Ja, jeg ved godt jeg flip flopper imellem dansk og engelsk
+\t(III) Har også set det blive kaldt en "handle"
+\t(IV)  Render kommandoer, memory operationer osv.
+;r<br/><hr/>
+;tKilder
+\t[1] "Vulkan docs - Queues"
+\t    Forklare fint hvad queues er, men generalt er Vulkans docs meget fokuseret på
+\t    at vise hvordan man arbejder med det, frem for bare at forklare hvad og hvorfor
+\t    [ https://docs.vulkan.org/guide/latest/queues.html ]
+\t[2] "Vulkan tutorial - Physical devices and queue families"
+\t    Fin tutorial til, at finde physical devices, hvordan man sætter dem op, og samtidigt
+\t    går den i slutningen lidt ind på queues (specifikt families) og hvordan man finder
+\t    hvilke queue families der er tilgængelige på ens hardware
+\t    [ https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/03_Physical_devices_and_queue_families.html ]
+\t[3] "Vulkan tutorial - Logical devices and queues"
+\t    Kommer hurtigt og simpelt ind på hvordan man opretter en logical device, og hvordan
+\t    man binder den til en physical device. Den viser også kort hvordan man for fat i queues
+\t    vha. ens logical device
+\t    [ https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/04_Logical_device_and_queues.html ]

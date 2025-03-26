@@ -1,7 +1,30 @@
 ;tLog #004 (Vulkan) - Instanser og Løg
 ;sVulkan er, som Trolde, ligesom løg... de har alle flere lag
-;d\n??/03-2025
+;d\n10/03-2025
 ;r<hr/>
 
-Alt den Vulkan læsning har kørt mig lidt død på Vulkan, så denne logbog er på
-midlertidig standby, imens jeg fokuserer mere på Flutter.
+Efter en masse læsning omkring layers[1] og instances[2], er Vulkan... stadigvæk forvirende
+Umiddelbart virker det til, at layers(I) er valgfri componenter, som kan smutte ind Vulkan
+funktioner, imens de "går fra applikationen til hardwaret". De bruges til debugging da de
+"sidder" imellem applikationen og Vulkan driveren, kan de intercept function calls(II).
+
+En instance fungerer som en forbindelse imellem applikationen og Vulkan biblioteket. Det er
+igennem den, at man opsætter sin applikation(III), får fat på ting som hardwaret (GPU'er),
+laver og manager layers samt extensions mm.
+
+;r<br/>
+;rHele projektet kan findes på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Vulkan-Swagkant" target="_blank">Github</a>...
+
+;r<hr/>
+\t(I)   Ofte kaldet Validation Layers
+\t(II)  Nu orker jeg ej længere, at oversætte engelsk programmerings vrøvl til dansk
+\t(III) Ting som dets navn, hvilken Vulkan API den bruger, dens engine osv. 
+;r<br/><hr/>
+;tKilder
+\t[1] "Vulkan docs - Layers"
+\t    Forklare fint hvad layers er, samt hvorfor og hvordan man vil bruge dem
+\t    [ https://docs.vulkan.org/guide/latest/layers.html ]
+\t[2] "Vulkan tutorial - Instance"
+\t    En god forklaring af hvad en instance er, og hvordan man ville implementerer dem i et
+\t    given program
+\t    [ https://docs.vulkan.org/tutorial/latest/03_Drawing_a_triangle/00_Setup/01_Instance.html ]
