@@ -1,6 +1,6 @@
 ;tLog #008 (Vulkan) - Fysik, logik og kø kultur
 ;sVent... to enheder for èn GPU?
-;d\n26/03-2025
+;d\n25/03-2025
 ;r<hr/>
 
 Endelig kommer jeg til noget der ikke er så... abstrakt(I). Så man har i Vulkan physical og
