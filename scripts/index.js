@@ -18,8 +18,9 @@ $(document).ready(() => {
         success: data => {
             logFNames = [];
             String(data).substring(0, data.length - 1).split(';').forEach(d => {
-                logFNames.push(d)
+                logFNames.push(d);
             });
+            logFNames.sort((a, b) => { return getLogNum(a) - getLogNum(b); });
 
             let logsText = document.getElementById('logsText')
             logsText.innerHTML = "Loading logs[&#10004;]";
@@ -39,6 +40,7 @@ $(document).ready(() => {
             String(data).substring(0, data.length - 1).split(';').forEach(d => {
                 pdfFNames.push(d)
             });
+            pdfFNames.sort();
 
             let pdfsText = document.getElementById('pdfsText')
             pdfsText.innerHTML = "Loading PDFs[&#10004;]";
