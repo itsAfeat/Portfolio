@@ -1,0 +1,21 @@
+;tLog #009 (Portefølje) - LaTeX-MeX!
+;sMin ærlige reaktion til WYSIWYG -> >:(
+;d\n02-04-2025
+;r<hr/>
+
+Så efter at ha' set de andres porteføljer gik det op for mig, at jeg mangler
+nogle ting...
+
+\n[[ub;#aaa;;]TODO]
+\t( ) - Få lavet en samlet litteraturliste (PDF)
+\t( ) - Mix op en banger project liste ting (...PDF)
+\t( ) - Tage mig sammen, og få opdateret mine læringsmål (også PDF)
+
+\nIndtil videre har jeg fået lavet selve designet og ish begyndt på at fylde noget
+tekst på sidderne. Forneden ses billeder af litteraturlisten og projekt siden.
+
+;r<hr/>
+;t\nLitteraturliste LaTeX & eksempel
+;r<img src="images/litteratur.png" style="margin:1em;height:30em"/>
+;t\nProjekt side LaTeX & eksempel
+;r<img src="images/projekter.png" style="margin:1em;height:30em"/>
