@@ -109,6 +109,9 @@ function log(filename, clear) {
                         term.echo(l, { raw: isRaw });
                     }
                 });
+
+                refreshClickables();
+                // term.echo(`<button onclick="var elm = document.getElementById('logTitle'); elm.scrollIntoView(); elm.focus()">Spring op til toppen</button>`, { raw: true });
             });
     }
     else {

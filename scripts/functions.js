@@ -32,14 +32,26 @@ function getFunctionFromString(str) {
 }
 
 function refreshClickables() {
-    let elems = document.getElementsByClassName("clickableComm")
-    for (let e of elems) {
-        let eText = e.innerHTML;
+    let comElems = document.getElementsByClassName("clickableComm")
+    let imgElems = document.getElementsByTagName("img");
+
+    for (let ce of comElems) {
+        let eText = ce.innerHTML;
         if ((eText.indexOf('(')) != -1 || eText.indexOf('|') != -1) {
             eText = eText.split(/[\W]+/)[0];
         }
 
         let func = getFunctionFromString(eText);
-        e.onclick = function () { func() };
+        ce.onclick = function () { func() };
+    }
+
+    for (let ie of imgElems) {
+        let src = ie.src;
+        let ext = src.substring(src.lastIndexOf('.'));
+
+        if (ext != ".gif") {
+            ie.onclick = function () { window.open(src, '_blank'); }
+            ie.style["cursor"] = "zoom-in";
+        }
     }
 }
