@@ -50,7 +50,8 @@ function refreshClickables() {
         let src = ie.src;
         let ext = src.substring(src.lastIndexOf('.'));
 
-        if (ext != ".gif") {
+        // Make sure it doesn't apply to the geocities gifs
+        if (ext != ".gif" && !ie.classList.contains('geoImg')) {
             ie.onclick = function () { window.open(src, '_blank'); }
             ie.style["cursor"] = "zoom-in";
         }

@@ -1,0 +1,43 @@
+;tLog #011 (Gruppe) - Kanban boards & sprints!
+;sIntet er mere motiverende end samlet demotivation
+;d\n09-04-2025
+;r<hr/>
+
+Efter en god snak med resten af gruppen, kom vi til den fælles konklusion at,
+motivationsniveauet har været rimeligt lavt... omkring -> █▒▒▒▒▒▒▒▒▒ 10%
+
+\nVi holdte derfor et impromptu møde, hvor vi fik planlagt hvordan pokker vi
+fik sparket os selv igang igen. Vi snakkede bl.a. om daglige møder, at gøre
+bedre brug af vores kanban boards vi har lavet for de to apps, sammen med
+klare definerede mål, opsat i sprints.
+
+\nIdag har vi specifikt fået fastsat mindre nogle mål/opgaver, og så er planen
+at vi mødes i løbet af den nære fremtid, og får planlagt noget mere konkret
+vedr. den næste stykke tid.
+
+Ang. mine egne emner, Vulkan & Flutter samt at få opdateret porteføljet. Vulkan
+er stadigvæk så tungt, der sker opdatering men med alt den læsning er det svært
+at holde hovedet "frisk" nok til både at læse/kode i flere timer, og derefter få
+skrevet en logbog omkring, istedet for bare at gå i seng el.lign.
+
+\nDa [[i;#777;;](næsten)] alt mit arbejde i projektet er i Flutter, er det squ hårdt at få
+sig taget sammen til at sidde med det yderligere efter gruppearbejdet. Dog håber
+jeg at de mere klare optegnet rammer der kommer med sprints'ne medbringer en form
+for separering imellem projekt og ERFA Flutter.
+\nPlus... jeg har fået skrevet nogle funny(I) idéer ned til nogle simple apps.
+Måske er alt jeg mangler bare, at sætte mig ned med min notesbog og et krus
+hjemmebrygget mjød(II), for at få kode-geisten til at flyde igennem mig igen.
+
+\nOg til sidst, portefølje opdatering! litteratur- og projektlisten er basically
+done, alt LaTeX koden for designet er færdigt, nu mangler jeg bare at smide de
+sidste kilder, billeder osv. ind. Det eneste som jeg simpelthen ikke har kunnet
+få mig selv til at kigge på endnu, er læringsmållene. Dog har jeg aftalt med
+nogle gode kammersjukker [[i;#777;;](på tværs af roommates, projekt/klassekammerat, osv.)]
+som jeg vil sætte mig ned, og forhåbentligt få spyttet nogle konkrete lærings-
+mål ud med, så alle mine hængepartier samt motivationsniveauet kan ramme ██████████ 100%
+
+\n... eller ihvertfald komme tæt på.
+
+;r<hr/>
+\t(I)  Hvis jeg selv skulle sige det (¬ ₃ ͡¬)
+\t(II) Brygget på æblemost og -vin (og gær for procenterne) så den rigtig smager af sommer
