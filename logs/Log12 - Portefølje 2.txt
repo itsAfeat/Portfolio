@@ -1,0 +1,22 @@
+;tLog #012 (Portefølje) - Portefølje update 2!
+;sPortefølje 2: Electic Boogaloo
+;d\n14/04-2025
+;r<hr/>
+
+Efter en afslappende weekend hvor jeg grublede om jeg kunne lade mig selv
+holde ferie, med alt det jeg manglede. Jeg besluttede mig for, at... jeg
+som minimum skal ha' fået opdateret min portefølje. Det gode ved det er,
+at jeg har fået lavet min projekt- og kildeliste.
+
+\n[[ub;#aaa;;]TODO]
+\t(✓) - Få lavet en samlet litteraturliste (PDF)
+\t(✓) - Mix op en banger projekt liste ting (...PDF)
+\t( ) - Tage mig sammen, og få opdateret mine læringsmål (også PDF)
+
+\nSom man kan se, så mangler læringsmållene stadigvæk. Dog er planen, at
+få kigget på det i morgen. Brugte hovedsageligt de to andre PDF'er til at
+komme tilbage i flowet efter en weekend hvor jeg har haft behov for at koble
+100% af... alt jeg brugte IT til var, at sende mails, høre musik, og til at
+se Desperate Housewives.
+
+;r<br/>De to nye PDF'er skulle meget gerne være tilgængelige inde under <b class="clickableComm">pdf</b> kommandoen
