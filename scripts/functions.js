@@ -1,5 +1,6 @@
 const rawTab = () => { return "&ensp;&ensp;&ensp;&ensp;"; };
 const getLogNum = (str) => { return Number(str.substring(3, str.indexOf(' '))); }
+const removeExt = (str) => { return str.replace(/\.[^/.]+$/, ""); }
 
 function getApiArray(url) {
     $.ajax({

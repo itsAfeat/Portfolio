@@ -58,7 +58,10 @@ function pdf(filename, clear) {
     }
     else {
         term.echo(`\nFandt [[u;#fff;;]${pdfFNames.length}] pdf'er...`);
-        for (let i = 0; i < pdfFNames.length; i++) { term.echo(`${rawTab()}<b>[${i}]</b> <b class="clickableLink" onclick="pdf(${i})">${pdfFNames[i]}</b>`, { raw: true }); }
+        for (let i = 0; i < pdfFNames.length; i++) {
+            let fName = removeExt(pdfFNames[i]);
+            term.echo(`${rawTab()}<b>[${i}]</b> <b class="clickableLink" onclick="pdf(${i})">${fName}</b>`, { raw: true });
+        }
     }
 }
 
@@ -118,7 +121,8 @@ function log(filename, clear) {
         term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...`);
         for (let i = 0; i < logFNames.length; i++) {
             let spaces = '&ensp;'.repeat(i < 10 ? 2 : 1);
-            term.echo(`${rawTab()}<b>[${i}]${spaces}</b><b class="clickableLink" onclick="log(${i})">${logFNames[i]}</b>`, { raw: true });
+            let fName = removeExt(logFNames[i])
+            term.echo(`${rawTab()}<b>[${i}]${spaces}</b><b class="clickableLink" onclick="log(${i})">${fName}</b>`, { raw: true });
         }
     }
 }
