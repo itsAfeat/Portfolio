@@ -108,6 +108,9 @@ function log(filename, clear) {
                             .replace(/\(([IVXLCDM]+)\)/g, (match, _number) => {
                                 return isRaw ? `<b style="color:white;">${match}</b>` : `[[b;#fff;;]${match}]`;
                             });
+                        if (/\{\d+\}/g.test(l)) {
+                            l = l.replace(/"([^"]*)"/g, '[[iu;#aaa;;]"$1"]');
+                        }
 
                         term.echo(l, { raw: isRaw });
                     }

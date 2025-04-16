@@ -1,0 +1,37 @@
+;tLog #013 (Gruppe) - Login og bøvl
+;sHvorfor skal navigation være så kompliseret
+;d\n16/04-2025
+;r<hr/>
+
+Da der kom noget pludseligt op i går, der gjorde jeg ej fik kigget på lær-
+ingsmålene, mangler det stadigvæk. Jeg fik dog kigget på login siden til
+vores event app (projektet). Jeg lavede ikke så meget visuelt, det var
+mest bare god gammeldags backend(I), så når man skriver noget ind og trykker
+på "Login", at den faktisk gør noget med data'en. Forneden ses tre billeder.
+Den første er login skærmen, og de næste to er et fejlede login forsøg, og
+vellykket.
+
+;t\n\nLogin skærmen samt fejl og success
+;r<img src="projects/Gruppe/EventAppLogin.png" style="margin:1em;height:30em;float:left"></img>
+;r<img src="projects/Gruppe/EventAppLoginF.png" style="margin:1em;height:30em;float:left"></img>
+;r<img src="projects/Gruppe/EventAppLoginS.png" style="margin:1em;height:30em"></img>
+
+Jeg fiflede(II) også med noget kode der, når appen startede, tjekkede om man
+var logget ind(III), og hvis ej så førte en til login skærmen, hvorefter man
+logger ind, og derfra så kommer ind til selve appen.
+
+;t\n\nFuldskærms login med profil skærmen
+;r<img src="projects/Gruppe/EventAppLogin2.png" style="margin:1em;height:30em;float:left"></img>
+;r<img src="projects/Gruppe/EventAppProfil.png" style="margin:1em;height:30em"></img>
+
+;r<hr/>
+\t(I)   Ting som repos og modeler, samt noget basal indlæsning af data fra DB'en, og
+\t      selvfølgelig noget til at tjekke den indskrevne data.
+\t(II)  Er det overhovedet et ord?
+\t(III) For nu er den [[b;#aaa;;]false] som standard
+;r<br/><hr/>
+;tKilder
+\t[1] "ValueNotifier<T> class"
+\t    Som forventet er Google's egen dokumentation rimelig god, med fine eksempler
+\t    på forskellige brugs-scenarier
+\t    [ https://api.flutter.dev/flutter/foundation/ValueNotifier-class.html ]
