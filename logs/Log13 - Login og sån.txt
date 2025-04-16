@@ -11,7 +11,7 @@ på "Login", at den faktisk gør noget med data'en. Forneden ses tre billeder.
 Den første er login skærmen, og de næste to er et fejlede login forsøg, og
 vellykket.
 
-;t\n\nLogin skærmen samt fejl og success
+;t\nLogin skærmen samt fejl og success
 ;r<img src="projects/Gruppe/EventAppLogin.png" style="margin:1em;height:30em;float:left"></img>
 ;r<img src="projects/Gruppe/EventAppLoginF.png" style="margin:1em;height:30em;float:left"></img>
 ;r<img src="projects/Gruppe/EventAppLoginS.png" style="margin:1em;height:30em"></img>
@@ -20,7 +20,7 @@ Jeg fiflede(II) også med noget kode der, når appen startede, tjekkede om man
 var logget ind(III), og hvis ej så førte en til login skærmen, hvorefter man
 logger ind, og derfra så kommer ind til selve appen.
 
-;t\n\nFuldskærms login med profil skærmen
+;t\nFuldskærms login med profil skærmen
 ;r<img src="projects/Gruppe/EventAppLogin2.png" style="margin:1em;height:30em;float:left"></img>
 ;r<img src="projects/Gruppe/EventAppProfil.png" style="margin:1em;height:30em"></img>
 
