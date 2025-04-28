@@ -71,9 +71,14 @@ function log(filename, clear) {
     if (filename != null) {
         parseLog(filename);
         refreshClickables();
+        
+        term.echo(`<hr/><b id="returnBtn" class="clickableComm">Vis alle logs</b><hr/>`, { raw: true });
+        document.getElementById("returnBtn").addEventListener("click", function() {
+            log(null, true);
+        });
     }
     else {
-        term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...`);
+        term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...\n`);
         for (let i = 0; i < logFNames.length; i++) {
             // let spaces = '&ensp;'.repeat(i < 10 ? 2 : 1);
 
@@ -89,12 +94,20 @@ function log(filename, clear) {
 
             for (let j = startIndex; j <= endIndex; j++) {
                 let elm = document.querySelector(`div[data-index='${j}']`);
-                console.log(elm.innerHTML);
                 contentDiv.append(elm);
             }
 
             // term.echo(`${rawTab()}<b>[${i}]${spaces}</b><b class="clickableLink" onclick="log(${i})">${fName}</b>`, { raw: true });
         }
+
+        term.echo(`<hr/><b id="expAllBtn" class="clickableComm">Vis all</b> | <b id="colAllBtn" class="clickableComm">Skjul all</b><hr/>`, { raw: true });
+        term.echo(``, { raw: true });
+        document.getElementById("colAllBtn").addEventListener("click", function () {
+            toggleCollapsibles(true);
+        });
+        document.getElementById("expAllBtn").addEventListener("click", function () {
+            toggleCollapsibles(false);
+        });
 
         for (let ce of document.getElementsByClassName("collapsible")) {
             ce.addEventListener("click", function () {
@@ -110,6 +123,10 @@ function log(filename, clear) {
 
                 refreshClickables();
                 scrollToElem(this);
+            });
+
+            ce.addEventListener("dblclick", function () {
+                log(Number(ce.dataset.btnIndex), true);
             });
         }
     }

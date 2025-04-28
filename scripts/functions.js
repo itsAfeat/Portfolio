@@ -109,3 +109,18 @@ function parseLog(index) {
         }
     });
 }
+
+function toggleCollapsibles(collapseAll) {
+    for (let buttons of document.querySelectorAll("button.collapsible")) {
+        if (collapseAll) {
+            buttons.classList.remove("active");
+            buttons.nextElementSibling.style.maxHeight = null;
+        } else {
+            buttons.classList.add("active");
+            let content = buttons.nextElementSibling;
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    }
+
+    if (!collapseAll) { refreshClickables(); }
+}

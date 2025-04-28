@@ -388,19 +388,23 @@ a:has(> .geoImg) {
 }
 
 .collapsible {
-  background-color: #777;
+  background-color: transparent;
   color: white;
   cursor: pointer;
   padding: 18px;
   width: 75rem;
   border: none;
-  border-radius: 10px;
+  border-top: white solid 10px;
   text-align: left;
   outline: none;
   font-size: 15px;
+  font-weight: bold;
 }
 
-.active, .collapsible:hover {
+.active,
+.collapsible:hover {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   background-color: #555;
 }
 
@@ -419,10 +423,11 @@ a:has(> .geoImg) {
 .content {
   padding: 0 18px;
   max-height: 0;
-  width: 72rem;
+  width: 75rem;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background-color: transparent;
-  border: #555 solid 5px;
-  border-radius: 10px;
+  /* border: #555 solid 5px; */
+  /* border-radius: 10px; */
+  border: none;
 }
