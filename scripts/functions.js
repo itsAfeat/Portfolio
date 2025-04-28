@@ -2,6 +2,11 @@ const rawTab = () => { return "&ensp;&ensp;&ensp;&ensp;"; };
 const getLogNum = (str) => { return Number(str.substring(3, str.indexOf(' '))); }
 const removeExt = (str) => { return str.replace(/\.[^/.]+$/, ""); }
 
+function scrollToElem(elem) {
+    document.getElementsByClassName("cmd")[0].classList.remove("enabled");
+    elem.scrollIntoView();
+}
+
 function getApiArray(url) {
     $.ajax({
         url: url,
@@ -57,4 +62,50 @@ function refreshClickables() {
             ie.style["cursor"] = "zoom-in";
         }
     }
+}
+
+function parseLog(index) {
+    // let fname = isNaN(filename) ? (filename[filename.length - 4] != '.' ? `${filename}.txt` : filename) : String(logFNames[filename]);
+
+    let lines = logContent[index].split("\n");
+    lines.forEach((l) => {
+        if (lines.indexOf(l) == 0) { term.echo(""); }
+        if (l && l.trim()) {
+            let isRaw = false;
+
+            if (l[0] == ';') {
+                switch (l[1]) {
+                    case 'd':
+                        l = `[[b;#fff;;]${l.substring(2)}]`;
+                        break;
+                    case 't':
+                        l = `<b id="logTitle">${l.substring(2)}</b>`
+                        isRaw = true;
+                        break;
+                    case 'r':
+                        l = l.substring(2);
+                        isRaw = true;
+                        break;
+                    case 's':
+                        l = `[[i;#777;;]${l.substring(2)}]`;
+                        break;
+                }
+            }
+
+            l = l.replaceAll('\\t', '\t')
+                .replaceAll('\\n', '\n')
+                .replace(/\[(\d+)\]/g, (_match, number) => {
+                    return isRaw ? `<b style="color:white;">{${number}}</b>` : `[[b;#fff;;]{${number}}]`;
+                })
+                .replace(/\(([IVXLCDM]+)\)/g, (match, _number) => {
+                    return isRaw ? `<b style="color:white;">${match}</b>` : `[[b;#fff;;]${match}]`;
+                });
+            if (/\{\d+\}/g.test(l)) {
+                l = l.replace(/"([^"]*)"/g, '[[iu;#aaa;;]"$1"]');
+            }
+
+            // result.push(l, isRaw);
+            term.echo(l, { raw: isRaw });
+        }
+    });
 }

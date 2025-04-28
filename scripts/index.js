@@ -8,6 +8,8 @@ function exit() {
 var pdfFNames = [];
 var logFNames = [];
 
+var logContent = {};
+
 const apiDelay = 1500;
 const apiUrl = "https://p0rtf0l10-4p1.netlify.app/api/";
 
@@ -21,6 +23,16 @@ $(document).ready(() => {
                 logFNames.push(d);
             });
             logFNames.sort((a, b) => { return getLogNum(a) - getLogNum(b); });
+
+            for (let i = 0; i < logFNames.length; i++) {
+                let log = logFNames[i];
+
+                fetch(`logs/${log}`)
+                .then(r => r.text())
+                .then(text => {
+                    logContent[i] = text;
+                });
+            }
 
             let logsText = document.getElementById('logsText')
             logsText.innerHTML = "Loading logs[&#10004;]";

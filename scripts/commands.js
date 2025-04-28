@@ -69,63 +69,48 @@ function log(filename, clear) {
     if (clear) { term.clear(); }
 
     if (filename != null) {
-        let fname = isNaN(filename) ? `${filename}.txt` : String(logFNames[filename]);
-
-        fetch(`logs/${fname}`)
-            .then(r => r.text())
-            .then(text => {
-                let lines = text.split("\n");
-                lines.forEach((l) => {
-                    if (lines.indexOf(l) == 0) { term.echo(""); }
-                    if (l && l.trim()) {
-                        let isRaw = false;
-
-                        if (l[0] == ';') {
-                            switch (l[1]) {
-                                case 'd':
-                                    l = `[[b;#fff;;]${l.substring(2)}]`;
-                                    break;
-                                case 't':
-                                    // l = `[[bu;#fff;;]${l.substring(2)}]`;
-                                    l = `<b id="logTitle">${l.substring(2)}</b>`
-                                    isRaw = true;
-                                    break;
-                                case 'r':
-                                    l = l.substring(2);
-                                    isRaw = true;
-                                    break;
-                                case 's':
-                                    l = `[[i;#777;;]${l.substring(2)}]`;
-                                    break;
-                            }
-                        }
-
-                        l = l.replaceAll('\\t', '\t')
-                            .replaceAll('\\n', '\n')
-                            .replace(/\[(\d+)\]/g, (_match, number) => {
-                                return isRaw ? `<b style="color:white;">{${number}}</b>` : `[[b;#fff;;]{${number}}]`;
-                            })
-                            .replace(/\(([IVXLCDM]+)\)/g, (match, _number) => {
-                                return isRaw ? `<b style="color:white;">${match}</b>` : `[[b;#fff;;]${match}]`;
-                            });
-                        if (/\{\d+\}/g.test(l)) {
-                            l = l.replace(/"([^"]*)"/g, '[[iu;#aaa;;]"$1"]');
-                        }
-
-                        term.echo(l, { raw: isRaw });
-                    }
-                });
-
-                refreshClickables();
-                // term.echo(`<button onclick="var elm = document.getElementById('logTitle'); elm.scrollIntoView(); elm.focus()">Spring op til toppen</button>`, { raw: true });
-            });
+        parseLog(filename);
+        refreshClickables();
     }
     else {
         term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...`);
         for (let i = 0; i < logFNames.length; i++) {
-            let spaces = '&ensp;'.repeat(i < 10 ? 2 : 1);
+            // let spaces = '&ensp;'.repeat(i < 10 ? 2 : 1);
+
             let fName = removeExt(logFNames[i])
-            term.echo(`${rawTab()}<b>[${i}]${spaces}</b><b class="clickableLink" onclick="log(${i})">${fName}</b>`, { raw: true });
+            term.echo(`<button data-btn-index=${i} class="collapsible">${fName}</button><div id="div${i}" class="content"></div>`, { raw: true });
+            parseLog(i);
+
+            // This flippin' sucks... but it works B^)
+            let contentDiv = document.getElementById(`div${i}`);
+            let output = document.querySelector("div.terminal-output").children;
+            let startIndex = document.querySelectorAll(`div[data-index='${Number(contentDiv.parentElement.parentElement.dataset.index) + 1}']`)[0].dataset.index;
+            let endIndex = Number(output[output.length - 1].dataset.index);
+
+            for (let j = startIndex; j <= endIndex; j++) {
+                let elm = document.querySelector(`div[data-index='${j}']`);
+                console.log(elm.innerHTML);
+                contentDiv.append(elm);
+            }
+
+            // term.echo(`${rawTab()}<b>[${i}]${spaces}</b><b class="clickableLink" onclick="log(${i})">${fName}</b>`, { raw: true });
+        }
+
+        for (let ce of document.getElementsByClassName("collapsible")) {
+            ce.addEventListener("click", function () {
+                this.classList.toggle("active");
+                let content = this.nextElementSibling;
+                // let index = this.dataset.btnIndex;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+
+                refreshClickables();
+                scrollToElem(this);
+            });
         }
     }
 }
