@@ -105,7 +105,6 @@ function log(filename, clear) {
         }
 
         term.echo(`<hr/><b id="expAllBtn" class="clickableComm">Vis all</b> | <b id="colAllBtn" class="clickableComm">Skjul all</b><hr/>`, { raw: true });
-        term.echo(``, { raw: true });
         document.getElementById("colAllBtn").addEventListener("click", function () {
             toggleCollapsibles(true);
         });

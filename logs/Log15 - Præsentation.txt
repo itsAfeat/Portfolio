@@ -1,0 +1,47 @@
+;tLog #015 (Vulkan) - Præsentation
+;sDet nærmer sig noget visuelt
+;d\n18/04-2025
+;r<hr/>
+
+Efter at der var kommet noget login logik i appen, besluttede jeg mig for,
+
+Idag valgte jeg, at forhåbentligt få nærme mig noget visuelt med Vulkan.
+Rigtig meget af semesteret er gået på, at prøve at forstå Vulkan og dets
+mange særheder i forhold til mange andre API, som OpenGL. En af disse
+spøjse ting er, at Vulkan ikke har en "[[i;#aaa;;]default framebuffer]" som mange an-
+dre API har. Det er her Vulkans Swap Chain kommer ind i billedet, da det
+er den der holder styr på de diverse buffers, inden de bliver vist til
+skærmen. Den fungere som en kø af billeder og har som regelt til ansvar
+at synkroniserer præsenteringen af billeder til skærmens refresh rate.
+
+\nFørst skal man, som med alt andet i Vulkan, tjekke at udstyret (GPU)
+supporeterer Swap Chains(I). Dette gøres ved at lave en liste med de
+extensions man skal bruge (bare en for nu), hente hvor mange extensions
+grafikkortet understøtter, og derefter tjekker man dem alle igennem for
+at se om den man leder efter er tilstede. Dette kan ses på billedet forneden...\n
+
+;tExtension Support Check
+;r<img src="projects/Vulkan/extensionCheck.png" style="margin:1em;height:15em"></img>
+
+På linje 5 og 6, hentes alle understøttede extensions, som gemmes i
+[[b;#aaa;;]availableExtensions] listen. Der laves derefter en sorteret liste ud-
+fra de ønskede extensions(II) kaldet [[b;#aaa;;]requiredExtensions]. Herefter
+går den slavisk igennem alle tilgængelige extensions, og prøver at
+slette dem fra vores påkrævede extensions. Til sidst tjekkes der om
+listen af påkrævede extensions er tom, da det vil betyde at den er
+stødt på alle de extensions vi kræver at grafikkortet understøtter.
+
+Det næste vi skal gøre, er at finde ud af noget basalt viden om vores
+swap chains. Dette indebære dens...\n
+
+\t[[i;#fff;;]Capabilities]                     - Ting som dens min/max antal billeder, hvor små/store de må være.
+\t[[i;#fff;;]Formats]                          - Pixel format og color space
+\t[[i;#fff;;]Tilgængelige præsentations modes] - Modes som Immediate, FIFO og Mailbox(III)
+
+To be continued...
+
+;r<hr/>
+\t(I)   Hvis grafikkortet er designet til servere, kan det hænde at den ikke
+\t      har nogen [[i;#aaa;;]display outputs].
+\t(II)  Listen der hedder [[b;#aaa;;]deviceExtensions].
+\t(III) Se (https://registry.khronos.org/vulkan/specs/latest/man/html/VkPresentModeKHR.html#_description)

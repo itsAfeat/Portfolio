@@ -1,4 +1,4 @@
-const rawTab = () => { return "&ensp;&ensp;&ensp;&ensp;"; };
+const rawTab = () => { return "&ensp;".repeat(4); };
 const getLogNum = (str) => { return Number(str.substring(3, str.indexOf(' '))); }
 const removeExt = (str) => { return str.replace(/\.[^/.]+$/, ""); }
 
@@ -66,7 +66,19 @@ function refreshClickables() {
 }
 
 function parseLog(index) {
-    // let fname = isNaN(filename) ? (filename[filename.length - 4] != '.' ? `${filename}.txt` : filename) : String(logFNames[filename]);
+    if (typeof index == "string") {
+        let fname = `${index}.txt`;
+        index = logFNames.indexOf(fname);
+        if (index == -1) {
+            fetch(`logs/${fname}`)
+                .then(r => r.text())
+                .then(text => {
+                    logContent[index] = text;
+                    index = logContent.length;
+                });
+        }
+        // let fname = isNaN(filename) ? (filename[filename.length - 4] != '.' ? `${filename}.txt` : filename) : String(logFNames[filename]);
+    }
 
     let lines = logContent[index].split("\n");
     lines.forEach((l) => {

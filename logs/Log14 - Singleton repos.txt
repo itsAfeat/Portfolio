@@ -1,0 +1,44 @@
+;tLog #014 (Gruppe) - Singleton repos
+;sAldrig mere skal jeg bøvle med repo access
+;d\n17/04-2025
+;r<hr/>
+
+Efter at der var kommet noget login logik i appen, besluttede jeg mig for,
+i samme swoop, at få noget styr på vores repos. I tidligere projekter, har
+vi i gruppen lavet en singleton klasse(I) der indeholdte en instans af hver
+enkelte repository klasse. På denne måde var det muligt, at have adgang til
+alle repos på tværs af hele projektet, samtidigt med at det løser det origi-
+nale problem vi sad med, som var at sørge for at det altid var den samme in-
+stanse af et repo, med andre ord, at vi kan få fat i vores data.
+
+\nDet er ikke muligt, at gøre en klasse [[i;#aaa;;]static] i Dart... man kan dog, vha.
+noget smart kaldet [[i;#ccc;;]factory], der bla. lader en lave en constructor uden at,
+den behøver at returnere en ny instans af en klasse[1]. Forneden ses et eks-
+empel på en singleton klasse i Dart(II).\n
+
+;tEvent UserRepo singleton
+;r<img src="projects/Gruppe/EventUserRepo.png" style="margin:1em;height:15em"></img>
+
+Starter man på linje 15, kan man se at der laves en navngivet privat constructor.
+Det er denne constructor der bruges til at lave vores ene instans på linje 5,
+da den er statisk, tilhører den klassen og der er derfor kun én instans. Der
+bruges så en factory constructor, til at returnere denne ene instans. Det sma-
+rte med dette er, at man kan tilføje diverse initialiserings kode i constructor'en
+der kan tjekke om, fx en database er forbundet, og hvis ikke så gøre det. På den
+måde skal man ikke sørge for at kalde en init metode for hver repo, da den selv
+sørger for dette hver gang den bruges.
+
+\nEfter dette var det en masse finpudsning af koden, da meget af den koden som
+interagerer med databasen er på en seperat tråd, er det vigtigt at de tråde af-
+sluttes inden den næste koden køres. Dette er ikke helt blevet fikset, og er på
+nuværende tidspunkt løst med at have et enkelt init kald i main funktionen.
+
+;r<hr/>
+\t(I)  I C# var dette nemmest gjort ved at lave en [[i;#aaa;;]public static] klasse.
+\t(II) Taget fra UserRepo klassen fra Event appen. Alle ekstra dele, som DB forbindelse,
+\t     er fjernet for at gøre eksempelt mere overskueligt.
+;r<br/><hr/>
+;tKilder
+\t[1] "Constructors"
+\t    Endnu engang Google's egen dokumentation, så tommel op.
+\t    [ https://dart.dev/language/constructors#factory-constructors ]
