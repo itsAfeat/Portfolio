@@ -47,9 +47,10 @@ function refreshClickables() {
         if ((eText.indexOf('(')) != -1 || eText.indexOf('|') != -1) {
             eText = eText.split(/[\W]+/)[0];
         }
-
         let func = getFunctionFromString(eText);
-        ce.onclick = function () { func() };
+        if (func != undefined) {
+            ce.onclick = function () { func() };
+        }
     }
 
     for (let ie of imgElems) {

@@ -66,6 +66,10 @@ function pdf(filename, clear) {
 }
 
 function log(filename, clear) {
+    if (typeof filename == "boolean") {
+        clear = Boolean(filename);
+        filename = null;
+    }
     if (clear) { term.clear(); }
 
     if (filename != null) {
