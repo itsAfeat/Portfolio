@@ -75,20 +75,19 @@ function log(filename, clear) {
     if (filename != null) {
         parseLog(filename);
         refreshClickables();
-        
+
         term.echo(`<hr/><b id="returnBtn" class="clickableComm">Vis alle logs</b><hr/>`, { raw: true });
-        document.getElementById("returnBtn").addEventListener("click", function() {
+        document.getElementById("returnBtn").addEventListener("click", function () {
             log(null, true);
         });
     }
     else {
         term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...\n`);
         for (let i = 0; i < logFNames.length; i++) {
-            // let spaces = '&ensp;'.repeat(i < 10 ? 2 : 1);
 
             let fName = removeExt(logFNames[i])
-            term.echo(`<button data-btn-index=${i} class="collapsible">${fName}</button><div id="div${i}" class="content"></div>`, { raw: true });
-            parseLog(i);
+            term.echo(`<button data-btn-index=${i} class="collapsible">${fName}</button><div id="div${i}" class="content"><br/></div>`, { raw: true });
+            parseLog(i, false);
 
             // This flippin' sucks... but it works B^)
             let contentDiv = document.getElementById(`div${i}`);
@@ -97,11 +96,22 @@ function log(filename, clear) {
             let endIndex = Number(output[output.length - 1].dataset.index);
 
             for (let j = startIndex; j <= endIndex; j++) {
+                let newline = false;
                 let elm = document.querySelector(`div[data-index='${j}']`);
-                contentDiv.append(elm);
-            }
 
-            // term.echo(`${rawTab()}<b>[${i}]${spaces}</b><b class="clickableLink" onclick="log(${i})">${fName}</b>`, { raw: true });
+                let nlIndex = elm.innerText.indexOf("\\n");
+                if (nlIndex != -1) {
+                    if (nlIndex < 2) {
+                        contentDiv.append(document.createElement('br'));
+                    } else {
+                        newline = true;
+                    }
+                    elm.innerHTML = elm.innerHTML.replaceAll("\\n", "\n");
+                }
+
+                contentDiv.append(elm);
+                if (newline) { contentDiv.append(document.createElement('br')); }
+            }
         }
 
         term.echo(`<hr/><b id="expAllBtn" class="clickableComm">Vis all</b> | <b id="colAllBtn" class="clickableComm">Skjul all</b><hr/>`, { raw: true });
@@ -116,7 +126,6 @@ function log(filename, clear) {
             ce.addEventListener("click", function () {
                 this.classList.toggle("active");
                 let content = this.nextElementSibling;
-                // let index = this.dataset.btnIndex;
 
                 if (content.style.maxHeight) {
                     content.style.maxHeight = null;

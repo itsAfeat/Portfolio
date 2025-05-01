@@ -65,7 +65,7 @@ function refreshClickables() {
     }
 }
 
-function parseLog(index) {
+function parseLog(index, parseNewline = true) {
     if (typeof index == "string") {
         let fname = `${index}.txt`;
         index = logFNames.indexOf(fname);
@@ -105,9 +105,8 @@ function parseLog(index) {
                 }
             }
 
-            l = l.replaceAll('\\t', '\t')
-                .replaceAll('\\n', '\n')
-                .replace(/\[(\d+)\]/g, (_match, number) => {
+            l = (parseNewline ? l.replaceAll('\\n', '\n') : l).replaceAll('\\t', '\t');
+            l = l.replace(/\[(\d+)\]/g, (_match, number) => {
                     return isRaw ? `<b style="color:white;">{${number}}</b>` : `[[b;#fff;;]{${number}}]`;
                 })
                 .replace(/\(([IVXLCDM]+)\)/g, (match, _number) => {

@@ -3,7 +3,9 @@
 ;d\n18/04-2025
 ;r<hr/>
 
-Efter at der var kommet noget login logik i appen, besluttede jeg mig for,
+Det er gået op for mig, at jeg ikke har haft et [[bi;#ddd;;]eneste] kode eksempel med
+Vulkan. Det skal jeg ha' rettet op på, så denne log kommer til at være lidt
+længere med en masse kode. Beklager på forhånd...\n
 
 Idag valgte jeg, at forhåbentligt få nærme mig noget visuelt med Vulkan.
 Rigtig meget af semesteret er gået på, at prøve at forstå Vulkan og dets
@@ -34,14 +36,123 @@ stødt på alle de extensions vi kræver at grafikkortet understøtter.
 Det næste vi skal gøre, er at finde ud af noget basalt viden om vores
 swap chains. Dette indebære dens...\n
 
-\t[[i;#fff;;]Capabilities]                     - Ting som dens min/max antal billeder, hvor små/store de må være.
-\t[[i;#fff;;]Formats]                          - Pixel format og color space
-\t[[i;#fff;;]Tilgængelige præsentations modes] - Modes som Immediate, FIFO og Mailbox(III)
+\t[[i;#fff;;]Capabilities]                     → Ting som dens min/max antal billeder, hvor små/store de må være.
+\t[[i;#fff;;]Formats]                          → Pixel format og color space.
+\t[[i;#fff;;]Tilgængelige præsentations modes] → Modes som Immediate, FIFO og Mailbox.(III)\n
 
-To be continued...
+;tSwap Chain details struct & query metode
+;r<img src="projects/Vulkan/swapChainStruct.png" style="margin:1em;height:15em;float:left"></img>
+;r<img src="projects/Vulkan/swapChainQuery.png" style="margin:1em;height:20em;float:left"></img>
+
+Til venstre ses den struct som skal holdes informationen om vores
+Swap Chains. På linje 6 ses en metode, der bruges til at tjekke om
+der er noget indhold i struct'en. Dette bruges senere til at tjekke
+om en Swap Chain, er fuldendt og derfor "adequate" til brug.\n
+
+Herefter ses den metode som bruges til at hente den ønskede data.
+Den tager én parameter, som er grafikkortet der skal bruges, og
+henter dens Swap Chains "[[i;#aaa;;]capabilities]". Det meste af metoden går ud
+på at kalde allerede eksisterende Vulkan metoder, og gemme deres
+output i vores struct.\n
+
+Som det næste skal vi ha' valgt vores Swap Chains surface format,
+dens present mode og dens extent, hvilket er dens opløsning, og
+er [[i;#777;;](næsten)] altid lig med vinduets opløsning.\n
+
+;tSwap Chain Surface Format ...
+;r<img src="projects/Vulkan/swapChainSurfaceFormat.png" style="margin:1em;width:60em;"></img>
+;t... Present Mode ...
+;r<img src="projects/Vulkan/swapChainPresentMode.png" style="margin:1em;width:60em;"></img>
+;t... og Extent hentning
+;r<img src="projects/Vulkan/swapChainExtent.png" style="margin:1em;height:30em;"></img>
+
+Starter vi ved vores surface format, så tager den en liste af
+Surface Formats(IV), som den så tjekker igennem for vores øn-
+skede format og colorspace, som i dette tilfælde er...\n
+
+\t[[i;#fff;;]VK_FORMAT_B8G8R8A8_SRGB]          → Vi gemmer farver i en BGRA rækkefølge med en 8-bit unsigned int
+\t                                   for hver af dem hvilket giver os 32-bits pr. pixel.
+\t[[i;#fff;;]VK_COLORSPACE_SRGB_NONLINEAR_KHR] → SRGB virker til at være standarden inden for billeder, og dette
+\t                                   [[i;#aaa;;]flag], som det hedder, bruges til at finde ud af om det er understøttet.
+
+\nFor vores Present Mode, har jeg valgt at gå med Mailbox, da
+den vil give v-sync, så ingen tearing, den har en lavere in-
+put lag da den kasserer "outdated" frames, den bruger mere
+af GPU'en da den kan renderer frames som måske aldrig bliver
+ender med at blive vist. Metoden [[u;#bbb;;]chooseSwapPresentMode] fung-
+ere meget ligesom [[u;#bbb;;]chooseSwapSurfaceFormat], i at den får en
+liste fra vores struct, som den så tjekker igennem for vor-
+es ønskede Present Mode. Den eneste Present Mode som altid
+er tilgængelig er FIFO, så skulle det ske at grafikkortet
+ikke understøtter vores ønskede Mode kan vi returnere FIFO
+istedet.\n
+
+Til sidst skal vi ha' sat Swap Chain'ens extens. Først
+tjekkes der om en af værdierne i vores nuværende extent er
+lig med maks værdien af en unsigned 32 bit integer som også
+er kendt osm 0xFFFFFFFF eller 4294967295. Dette er endnu en
+specifik ting for Vulkan, hvor hvis fx ens extent width er
+lig med 0xFFFFFFFF, betyder det at vores surface's størrelse
+ikke er fixed, så hvis den fx er i windowed mode.\n
+
+Er det et resizable window vi har med at gøre, starter vi ud
+med at få størrelsen af vores frame buffer, som vi derefter
+laver en VkExtent2D med, her castes de også fra en int, til
+en uint32_t hvilket er den samme datatype som vores min- og
+maxImageExtent er. Den bliver derefter clampet til vores
+Swap Chains min og max størrelse og derefter returneret.\n
+
+Nu er det eneste som mangler, at reelt kreerer disse vores
+Swap Chain, hvilket sker i [[u;#bbb;;]createSwapChain] funktionen, som
+ses forneden...\n
+
+;tCreate Swap Chain funktion 1
+;r<img src="projects/Vulkan/swapChainCreate1.png" style="margin:1em;width:40em;"></img>
+
+Først bruger vi vores tidligere funktioner og struct til, at
+få diverse informationer om vores Swap Chain. [[i;#aaa;;]imageCount] var-
+iablen indeholder hvor mange billeder vi gerne vil have i vores
+Chain, her bruger vi vores capabilities hvorfra vi tager hvad
+dens minimum mængde af billeder er +1, da interne operationer
+godt kan forårsage at den skal vente lidt inden man kan hente
+det næste billede hvis den er sat til dens minimum.
+Det er selvfølgelig også vigtigt, at den ikke overskrider dens
+maks, så på linje 9 tjekkes der efter dette, 0 her er en speciel
+værdi som betyder, at der ikke er nogen max.\n
+
+Nu kommer den mest langtrukende del af at lave objekter i Vulkan,
+som er deres [[ib;#bbb;;]Create Info], alt man skal gøre er at samle en masse
+information, som man så meget fint CTRL+C CTRL+V over i objektets
+create info.\n
+
+;tCreate Swap Chain funktion 2
+;r<img src="projects/Vulkan/swapChainCreate2.png" style="margin:1em;width:40em;"></img>
+
+Det er create info'en der indeholder... ja, alt informationen
+om objektet.\n
+
+;tCreate Swap Chain funktion 3
+;r<img src="projects/Vulkan/swapChainCreate3.png" style="margin:1em;width:40em;"></img>
+
+Til sidst bliver Swap Chain'en endelig lavet[1] (hvis alt gik som
+forventet). For at gøre arbejdet nemmere for os senere, vil vi gerne
+også lige hente alle billeder der ligger i vores Swap Chain, nå nu
+vi allerede sidder med den. Dette ses på linje 49 til 51, og følger
+meget den generelle struktur, af at kalde en funktion som giver både
+en liste men også antallet, først kaldet med en nullptr, da listen
+ikke er den rigtige størrelse, derefter resize's listen, og funktionen
+kaldes derefter igen, nu med listen.
 
 ;r<hr/>
 \t(I)   Hvis grafikkortet er designet til servere, kan det hænde at den ikke
 \t      har nogen [[i;#aaa;;]display outputs].
 \t(II)  Listen der hedder [[b;#aaa;;]deviceExtensions].
-\t(III) Se (https://registry.khronos.org/vulkan/specs/latest/man/html/VkPresentModeKHR.html#_description)
+\t(III) Se https://registry.khronos.org/vulkan/specs/latest/man/html/VkPresentModeKHR.html#_description
+\t(IV)  Det er vores [[i;#aaa;;]formats] liste fra struct'en.
+;r<br/><hr/>
+;tKilder
+\t[1] "VkSwapchainKHR"
+\t    Vulkan dokumentation er for det meste skrevet ret forvirrende,
+\t    men den er nem at finde rundt i og der er fint med links til
+\t    relaterede funktioner el.lign.
+\t    [ https://registry.khronos.org/vulkan/specs/latest/man/html/VkSwapchainKHR.html ]

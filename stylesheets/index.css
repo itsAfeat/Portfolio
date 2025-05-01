@@ -394,7 +394,7 @@ a:has(> .geoImg) {
   padding: 18px;
   width: 75rem;
   border: none;
-  border-top: white solid 10px;
+  border-top: #a9a9a9 solid 10px;
   text-align: left;
   outline: none;
   font-size: 15px;
