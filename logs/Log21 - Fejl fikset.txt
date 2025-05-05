@@ -1,0 +1,4 @@
+;tLog #021 (Vulkan) - Fejl fikset
+;sKan sluk og tænd gøre så meget?!
+;d\n29/04-2025
+;<hr/>

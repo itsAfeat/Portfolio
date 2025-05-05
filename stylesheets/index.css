@@ -431,3 +431,8 @@ a:has(> .geoImg) {
   /* border-radius: 10px; */
   border: none;
 }
+
+code {
+  font-weight: bold;
+  font-family:'Lucida Console', monospace"
+}

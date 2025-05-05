@@ -1,0 +1,4 @@
+;tLog #022 (Portefølje) - Log backLog
+;sSatans hængeparti
+;d30/04-2025 → 1/05-2025
+;r<hr/>
