@@ -1,0 +1,22 @@
+;tLog #024 (Misc.) - Projektvejledning og ny plan
+;s
+;d\n12/05-2025
+;r<hr/>
+
+Så, der var projektvejledning i dag, hvor jeg fik nogle gode vejledninger
+for hvad jeg skal fokusere på. Først er fremmest er der læringsmålene, som
+jeg har planer med Tim om at vi begge sidder [[b;#ccc;;]FYSISK] sammen og få styr på
+vores mål. Jeg fik nogle fifs til hvad jeg kan gøre for at forbedre min
+portefølje hjemmeside, som var at istedet for at logs hedder "logX - ...",
+at de bare bruger deres dato som navnet, hvilket er helt forståeligt. Jeg
+har nogle idéer til hvordan jeg ville kunne gøre det, uden at skulle ændre
+på alle min logs, dog vil de alle sammen kræve at jeg på forhånden læser
+mine filer og trækker dato feltet ud af dem :(\n
+
+Umiddelbart lyder min plan for ugen således...
+\t[[i;#bbb;;]Tirsdag]\t- Flutter API med Tim
+\t[[i;#bbb;;]Onsdag]\t- Læringsmål og portefølje opdateringer
+\t[[i;#bbb;;]Torsdag]\t- Vulkan
+\t[[i;#bbb;;]Fredag]\t- Refleksioner
+\t[[i;#bbb;;]Lørdag]\t- Buffer dag
+\t[[i;#bbb;;]Søndag]\t- Buffer dag
