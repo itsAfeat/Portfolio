@@ -11,6 +11,22 @@ body {
   background: black;
 }
 
+a, a:visited {
+  color: #179ef1;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #179ef1;
+}
+
+a:active {
+  color: #fff;
+  background-color: #0c6297;
+}
+
 .terminal img[src*="blob:"],
 .terminal video {
   max-width: 100%;
@@ -387,9 +403,14 @@ a:has(> .geoImg) {
   aspect-ratio: 4/3;
 }
 
+.imgBorder {
+  /* border: #7c430e ridge 7.5px; */
+  border-radius: 2.5px;
+}
+
 .collapsible {
   background-color: transparent;
-  color: white;
+  color: #fff;
   cursor: pointer;
   padding: 18px;
   width: 75rem;
@@ -398,7 +419,12 @@ a:has(> .geoImg) {
   text-align: left;
   outline: none;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: bolder;
+}
+
+.collapsible-alt {
+  color: #a9a9a9;
+  border-top: #fff solid 10px;
 }
 
 .active,
@@ -434,5 +460,5 @@ a:has(> .geoImg) {
 
 code {
   font-weight: bold;
-  font-family:'Lucida Console', monospace"
+  font-family:'Courier New', monospace;
 }

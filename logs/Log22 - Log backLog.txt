@@ -1,4 +1,11 @@
 ;tLog #022 (Portefølje) - Log backLog
 ;sSatans hængeparti
-;d30/04-2025 → 1/05-2025
+;d\n30/04-2025 → 1/05-2025
 ;r<hr/>
+
+De sidste par dage har jeg være rigtig sløsset med at få uploadet mine logs.
+Jeg har skrevet noter ned for hvad jeg har lavet, men de er ikke endt som
+færdige logs på mit portefølje. Jeg har derfor brugt de sidste to dage på
+at få mere konkretiseret mine logs og fået skrevet lidt ned, der mangler
+stadigvæk at komme noget mere fyld på flere af dem, men det må jeg tage
+hen ad vejen imens jeg skriver min daglige log.

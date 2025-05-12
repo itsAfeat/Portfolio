@@ -61,6 +61,7 @@ function refreshClickables() {
         if (ext != ".gif" && !ie.classList.contains('geoImg')) {
             ie.onclick = function () { window.open(src, '_blank'); }
             ie.style["cursor"] = "zoom-in";
+            ie.classList.add("imgBorder")
         }
     }
 }

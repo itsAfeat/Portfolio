@@ -1,4 +1,27 @@
 ;tLog #021 (Vulkan) - Fejl fikset
 ;sKan sluk og tænd gøre så meget?!
 ;d\n29/04-2025
-;<hr/>
+;r<hr/>
+
+[[i;#aaa;;]"Idag skal jeg ha' fikset mit Vulkan problem"] er hvad jeg startede dagen
+med at sige til mig selv. Jeg har siden sidst, fået googlet(I) rundt, og
+som flere nævnte på sider som stackoverflow, så har Vulkan sine Validation
+Layers, som jeg jo også har sat op! Problemet er bare, at de ikke rigtig
+kommer med noget for min error. Jeg prøvede at snakke lidt med DeepSeek,
+og, og den nævnte at det måske var nogle af mine mange layers, som blev
+loadet med ind. Jeg tænkte umiddelbart ikke så meget over det, men det er
+vel mærkeligt at jeg fortæller den at jeg gerne vil have én specifik layer
+og den efterfølgende indlæser 5+ (heldigivis er den ønskede iblandt).
+
+Jeg tændte min computer, åbnede Visual Studio, build'ede, og kørte prog-
+rammet for at gøre mig bekendt mig fejlen igen, og... intet, ingen prob-
+lemer ingen "Read Access Violations" ingen mærkelige RAM adresser... Bare
+den klassiske blanke skærm og min console der udskriver fint min GPU, mine
+extensions.\n
+
+Nu når jeg havde dagen mere fri end forventet, brugte jeg tiden på at få
+mine collapsibles til at fungere helt fjong og fornæmt. Hvem sku' ha' troet
+at en god gammels dags sluk og tænd kunne gøre så meget...
+
+;r<hr/>
+\t(I) Jeg bruger teknisk set DuckDuckGo.

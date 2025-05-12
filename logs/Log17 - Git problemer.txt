@@ -1,0 +1,12 @@
+;tLog#017 (Misc.) - Git vrøvl
+;sDen møj Git vil ej push
+;d\n22/04-2025 → 23/04-2025
+;r<hr/>
+
+Så, det er gået op for mig, at der er nogle problemer med Github siden,
+da jeg ikke har kunnet push til repo'et?\n
+
+Har googlet lidt rundt, og det virker til at være mine Git indstillinger,
+eller noget... er ikke 100% sikker indenfor Git og det her er helt klart
+udenfor min ekspertise. Jeg må vel se om jeg kan få uploadet ting manuelt
+indtil da.

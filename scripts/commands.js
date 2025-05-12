@@ -82,11 +82,13 @@ function log(filename, clear) {
         });
     }
     else {
+        term.clear();
         term.echo(`\nFandt [[u;#fff;;]${logFNames.length}] logs...\n`);
         for (let i = 0; i < logFNames.length; i++) {
 
-            let fName = removeExt(logFNames[i])
-            term.echo(`<button data-btn-index=${i} class="collapsible">${fName}</button><div id="div${i}" class="content"><br/></div>`, { raw: true });
+            let fName = removeExt(logFNames[i]);
+            let classList = (i % 2 == 0) ? "collapsible" : "collapsible collapsible-alt";
+            term.echo(`<button data-btn-index=${i} class="${classList}">${fName}</button><div id="div${i}" class="content"><br/></div>`, { raw: true });
             parseLog(i, false);
 
             // This flippin' sucks... but it works B^)
@@ -94,6 +96,8 @@ function log(filename, clear) {
             let output = document.querySelector("div.terminal-output").children;
             let startIndex = document.querySelectorAll(`div[data-index='${Number(contentDiv.parentElement.parentElement.dataset.index) + 1}']`)[0].dataset.index;
             let endIndex = Number(output[output.length - 1].dataset.index);
+
+            console.log(`${startIndex}\t${endIndex}`);
 
             for (let j = startIndex; j <= endIndex; j++) {
                 let newline = false;
