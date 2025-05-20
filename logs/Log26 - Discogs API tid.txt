@@ -1,0 +1,53 @@
+;tLog #026 (Flutter) - Discogs API tid!
+;s
+;d\n14/05-2025
+;r<hr/>
+
+Så... Tim og jeg havde til opgave at få løst de sidste API problemer. Dette
+indebærer at finde en måde hvorpå vi kan ha' oplagre pladens pris... Problemet
+er, at vores PO bruger Discogs Inventory hvor vi har brugt Collection, man kan
+få meget af den samme information, men da den almene person ikke har priser på
+deres plader hvis det blot er en samling, måtte vi finde ud af noget andet.\n
+
+Heldigivis! har Discogs muligheden for at tilføje egne "custom fields", så vi
+ville kunne tilføje et ekstra felt kaldet fx. 'Price' hvis værdi vi vil kunne
+indlæse og ændre.
+
+;tCustom Fields
+;r<img src="projects/Gruppe/CollectionFields.png" style="margin:1em;width:40em;"></img>
+
+Vi startede ud med at Tim gik igennem hans APIHelper klasse, hvor det gik op
+for mig, hvor nemt det er at arbejde med API'er, JSON el.lign. takket være
+Dart(I), da der er samtlige officielle packages/biblioteker som fx http[1]
+der gør det muligt, at lave get, post, put eller whatever med kun én metode.\n
+
+;tPrice field API kode
+;r<img src="projects/Gruppe/LagerAPI1.png" style="margin:1em;width:40em;"></img>
+
+Foroven kan man se koden der henter Price feltets værdi. Da denne kode er
+lige efter hvor alt andet information om pladen hentes, er diverse id'er,
+sin mappe, release og instance id allerede kendt så det kan bare plottes ind
+i vores link på linje 6-7. På linje 8, laves selve kaldet vha. vores link
+og nogle headers som indeholder authorization.\n
+
+;tAPI header kode
+;r<img src="projects/Gruppe/LagerHeaders.png" style="margin:1em;width:40em;"></img>
+
+Efter dette er det dejligt nemt at få fat i den vha. den indbyggede jsonDecode
+metode som vi giver vores API kald svars "body", som derefter bliver ændret til
+et objekt som kan arbejdes med. Normalt vil man lave et ekstra kald for at fin-
+de ud af hvilket "field_id" der tilhører vores 'Price' felt, men vi ved at i
+dette tilfælde er det altid 4, så den del må være hardcoded for nu.\n
+
+Hele koden er smidt ind i en try-catch, da hvis den støder på et felt med en
+tom værdi går den helt amok og indlæser ingen andre plader, så en try-catch
+med en tom catch virkede som den hurtigste løsning. Man kan snakke om, at det
+er spild af tid, da den først vil fejle på linje 15, dog er det svært at tje-
+kke inden da, da det er 'value'ens værdi som skal tjekkes.
+
+;r<hr/>
+\t(I) Eller, Google er det vel.
+;r<br/><hr/>
+\t[1] "http 1.4.0"
+\t    En af de mest ligetil og nemme http request bibliotek jeg har arbejdet med
+\t    [ https://pub.dev/packages/http ]

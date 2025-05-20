@@ -1,0 +1,43 @@
+;tLog #027 (Flutter) - Bug fixing og arbejde
+;s Plus rester fra i går
+;d\n15/05-2025
+;r<hr/>
+
+Så... jeg glemte en masse fra igår(I), efter vi havde fået det hele til at
+virke (nogenlunde), besluttede Tim og jeg at vise det til PO. Umiddelbart
+virkede han rimelig tilfreds med det, og gav tommel op, dog skete der to
+crashes under fremvisningen. Jeg lagde ikke mærke til hvad fejlen helt
+præcist var, og jeg har ikke kunnet genskabe det endnu.\n
+
+Jeg brugte det meste af morgen på at sidde og kigge koden fra igår igennem
+i håb om at kunne spotte en form for fejl. Jeg prøvede mig frem med nogle,
+hvad man godt kunne mistænke som tilfældige operationer(II), men uden held
+og jeg havde samtidigt arbejde ved Record Pusher'en, så jeg fandt desværre
+ikke frem til de to bugs.\n
+
+Tim og jeg fik også lavet andre sager en bare API, først og fremmest fik vi
+fjernet det irriterende overflow der ville komme en warning om når man bl.a.
+brugte tasteturet...\n
+
+;tLogin skræm med og uden overflow
+;r<img src="projects/Gruppe/EventLoginKeyboard.png" style="margin:1em;width:10em;float:left"></img>
+;r<img src="projects/Gruppe/LagerLoginKeyboard.png" style="margin:1em;width:10em"></img>
+
+;rDette blev gjort ved at gøre skærmen resizeable vha. en <code>SingleChildScrollView</code>
+;r<code>widget</code>, og ved at sætte vores <code>Scaffolds</code> <code>resizeToAvoidBottomInset</code> attribut til
+;r<code>false</code>, som man kan se neden under...\n
+
+;tKeyboard fix kode
+;r<img src="projects/Gruppe/LagerKeyboardFix.png" style="margin:1em;width:40em"></img>
+
+Udover det, så lagde vi mærke til i vores API kald, fik vi et billede link.
+Dette link kunne vi konverterer til byte liste, som vi kunne indlæse som et
+billede...\n
+
+;tVinyl billede eksempler
+;r<img src="projects/Gruppe/LagerAPI2.png" style="margin:1em;width:10em;float:left"></img>
+;r<img src="projects/Gruppe/LagerAPI3.png" style="margin:1em;width:10em"></img>
+
+;r<hr/>
+\t(I)  Alt den API bøvl må ha' gjort mig træt
+\t(II) Tilføjede en plade, ændrede prisen... god gammeldaws CRUD

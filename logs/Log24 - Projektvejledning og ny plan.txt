@@ -1,5 +1,4 @@
 ;tLog #024 (Misc.) - Projektvejledning og ny plan
-;s
 ;d\n12/05-2025
 ;r<hr/>
 

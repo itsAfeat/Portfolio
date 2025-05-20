@@ -1,0 +1,12 @@
+;tLog #029 - Vulkan buffer
+;s
+;d\n17/05-2025
+;r<hr/>
+
+;r<hr/>
+\t(I)
+;r<br/><hr/>
+\t[1] "Shaders" - LearnOpenGL
+\t    ...
+\t    [[i;#ccc;;]Fundet ved at søge "Basic GLSL tutorial"]
+\t    [ https://learnopengl.com/getting-started/shaders ]
