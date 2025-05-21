@@ -1,0 +1,56 @@
+;tLog #028 (Refleksion) - FREDAG!
+;s
+;d\n16/05-2025
+;r<hr/>
+
+;rJeg valgte at stjæle fra min makker Tim, og bruge ChatGPT, eller rettere så
+brugte jeg DeepSeek &#x261D(˶⎚⤙⎚˶)(I), og så spørge den om nogle Refleksions
+spørgsmål. Min specifikke prompt var...
+
+;r<blockquote>Kan du skrive nogle refleksions spørgsmål for en et uges sprint. For kontekst er det til en logbog for et selvstudie semester på en datamatiker uddanelse.</blockquote>
+
+;r<h4 style="color:#fff"><b>Refleksions QnA</b></h4>
+;r<q>Hvad var målet med denne uges sprint, og nåede jeg det?</q>
+\t- Generelt er målet vel, at få taget mig sammen i forh. til mine mangler med portef-
+\t  øljen, men for at jeg kan gøre det, er jeg nød til at få lavet mig en ordentlig,
+\t  planlagt og struktureret arbejds- og læringsplan for hver uge, denne uge havde jeg
+\t  mere fokus på at få sat en rutine igang, og så småt at kigge på diverse hængepartier.\n
+;r<q>Hvilke specifikke opgaver eller emner arbejdede jeg på denne uge?</q>
+\t- Jeg fik kigget på REST API'er i Flutter sammen med Tim, i den sammenhæng fik vi
+\t  også kigget på nogle long due fixes til den irriterende overflow warning der al-
+\t  tid ville komme når tasteturet poppede op, og så blev appen jo så nydelig med de
+\t  fine billeder vi fik sat ind. Hvilket altsammen blev sluttet af med en præsenta-
+\t  tion af en, delvist, fungerende prototype til vores PO Bo.\n
+\t  Ellers så har jeg været på arbejde, skrevet logbøger og læringsmål, og selvfølg-
+\t  elig arbejdet videre i Vulkan.\n
+;r<q>Hvad gik godt, og hvorfor?</q>
+\t- Jeg begyndte at skrive mine logbøger i ye old reliable notepad.exe, det hjalp at
+\t  bare skulle skrive, uden at tænke på formatering el.lign. Jeg er rigtig glad for
+\t  det "[[i;#ccc;;]look]" mit portefølje har, men det er helt klart mere bøvlet at arbejde med
+\t  end en simpel Notion side f.eks. ville ha' været, men jeg må være ærlig med mig
+\t  selv i at, det er en blevet mere labor end love, så bare at kunne skrive løs i
+\t  en notepad gør det nemmere at få det gjort dagligt.\n
+\t  Der er dog et problem i, at jeg af en eller anden årsag ikke har [[i;#aaa;;]lyst]? til at
+\t  uploade dem "rå"... jeg ved umiddelbart ikke hvorfor, og det føles også som
+\t  noget der kræver mere end én logbog at håndtere, men jeg burde måske bare bide
+\t  det i mig, og uploade dem, så mine skønne undervisere kan se, at jeg faktisk
+;r&ensp;&ensp;&ensp;&ensp;&ensp; laver noget (¬⤙¬ ), så kan jeg altid tænke på <span class="yasQueen">aesthetics</span> senere.
+;r<br/>
+;r<q>Hvad var udfordrende, og hvordan håndterede jeg det?</q>
+\t- Det var satme svært for mig at komme igang med mine læringsmål, men jeg fandt ud
+\t  af, at hvis jeg bare åbner dokumentet og evt. starter med det på min anden skærm,
+\t  så blev jeg konstant mindet om det, hvilket gjorde at jeg hurtigere fik idéer og
+\t  samtidigt undgik at jeg bare sad og stirrede på siden uden at skrive et enkelt ord.\n
+;r<q>Har jeg brug for at justere mine mål eller tilgang til næste uges sprint?</q>
+\t- Helt klart, jeg skal starte med at gøre min arbejds- og læringsplan for ugen mere
+\t  specifik og konkret. Jeg skal også blive bedre til generelt at sige fra... jeg kan
+\t  godt li' at være til nytte, og det bare at sidde og studere har måske drænet mig
+\t  i den forstand, hvilket har gjort jeg har overkompenseret i form af at tage flere
+\t  vagter(II), sige "ja" til at hjælpe person omkring mig med diverse, og det gør at
+\t  når sætter mig ned og kigger på skole, så er jeg ofte ret smadret og orker ikke
+\t  særligt meget.
+
+;r<hr/>
+\t(I)  Jeg er rimelig sikker på at jeg allerede har lavet den joke i en
+\t     tidligere log.
+\t(II) Der er helt klart også et økonomisk pres vedr. det.

@@ -11,6 +11,32 @@ body {
   background: black;
 }
 
+blockquote {
+  font-style: italic;
+}
+
+blockquote::before {
+  font-weight: bold;
+  content: '\201C';
+}
+
+blockquote::after {
+  font-weight: bold;
+  content: '\201D';
+}
+
+q {
+  font-style: oblique;
+}
+
+q::before {
+  content: '\201C';
+}
+
+q::after {
+  content: '\201D';
+}
+
 a, a:visited {
   color: #179ef1;
   background-color: transparent;
@@ -201,6 +227,22 @@ a:active {
     inset 0 3px rgba(50, 50, 50, 0.05),
     inset 0 3px 8px rgba(64, 64, 64, 0.05),
     inset 0 -5px 10px rgba(25, 25, 25, 0.1);
+}
+
+.yasQueen {
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
 
 #terminal:focus-within~.scanlines:before {
