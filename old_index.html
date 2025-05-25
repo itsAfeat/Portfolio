@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Old Portefølje</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="le portfolio" />
+
+	<!-- meta tags for removing cache (good for Github pages) -->
+	<meta http-equiv='cache-control' content='no-cache'>
+	<meta http-equiv='expires' content='0'>
+	<meta http-equiv='pragma' content='no-cache'>
+
+	<link rel="stylesheet" type="text/css" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.css" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/old_index.css" />
+
+	<link rel="icon" href="favicon.ico" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+
+<div class="tv">
+
+	<div id="bannerDiv">
+		<div id="bannerAd">
+			<button style="float: right;margin: 5px;"
+				onclick="document.getElementById('bannerDiv').remove()"><b>X</b></button>
+
+			<br />
+			<h2 style="text-align: center;">
+				<span>NY KOMMANDO:</span>
+				<br />
+				<img src="images/point.gif" style="float: left;" />
+				<img src="images/point.gif" style="float:right;transform: scaleX(-1)" />
+				<a href="https://en.wikipedia.org/wiki/Computer_mouse" target="_blank">KLIK HER!</a>
+			</h2>
+
+			<hr />
+			<p>
+				Vi har gjort det endnu nemmere at udforske vores hjemmeside! Med en helt ny klikbar funktionalitet! Nu
+				kan
+				du navigere ved at klikke på kommandoer – ligesom at være hackeren fra en 90'er film, men uden at skulle
+				huske 'sudo'.
+			</p>
+			<img src="images/genie.gif" style="float: right;" />
+			<br />
+			<p>
+				Bag denne opdatering ligger avanceret ingeniørarbejde, der sikrer, at hvert klik føles som en del af
+				oplevelsen. Vi har brugt utallige timer på at optimere systemet, så det er lige så intuitivt som at
+				skrive
+				'cd ..' for at gå tilbage.
+			</p>
+
+			<ul>
+				<li><b>Klikbar navigation</b>
+					<ul>
+						<li>Udforsk hjemmesiden med intuitive klik.</li>
+					</ul>
+				</li>
+				<li><b>Hurtig indlæsning</b>
+					<ul>
+						<li>Ingen ventetid - alt er klar (næsten) med det samme.</li>
+					</ul>
+				</li>
+				<li><b>Responsivt design</b>
+					<ul>
+						<li>Fungerer perfekt på alle enheder - computer, tablet eller mobil.</li>
+					</ul>
+				</li>
+				<li><b>Forbedret søgefunktion</b>
+					<ul>
+						<li>Find det, du leder efter, med færre klik.</li>
+					</ul>
+				</li>
+				<li><b>Glidende animationer</b>
+					<ul>
+						<li>En visuel oplevelse, der føles futuristisk.</li>
+					</ul>
+				</li>
+			</ul>
+
+			<p>
+				Uanset om du er her for at se projekter, læse mine logs, eller bare for at føle dig sej, er hjemmesiden
+				nu
+				klar til at følge <b>dine</b> klik.
+			</p>
+
+			<hr />
+			<footer>
+				&#169; <a href="https://github.com/itsAfeat/" target="_blank">Alexander W.</a>
+			</footer>
+		</div>
+	</div>
+
+	<div id="terminal">
+		<div style="left: 0;bottom: 0;position: absolute;">
+			<p id="logsText" style="margin-left:1em;color: darkgoldenrod;">Loading logs[ ]</p>
+			<p id="pdfsText" style="margin-left:1em;color: darkgoldenrod;">Loading PDFs[ ]</p>
+
+			<a title="NoteSchwag" href="https://apps.microsoft.com/detail/9msmlrh6lzf3" target="_blank">
+				<img class="geoImg" src="images/notepad.gif" alt="notepad" />
+			</a>
+			<a title="Internet SchwagSplorer" href="https://www.microsoft.com/en-us/download/internet-explorer"
+				target="_blank">
+				<img class="geoImg" src="images/ie_logo.gif" alt="ie" />
+			</a>
+			<a title="NetSchwag" href="https://www.techspot.com/article/2077-netscape-navigator/" target="_blank">
+				<img class="geoImg" src="images/ns_logo.gif" alt="ns" />
+			</a>
+		</div>
+	</div>
+	<div id="flick" class="flicker"></div>
+	<div id="scann" class="scanlines"></div>
+	<div id="noise" class="noise"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.mousewheel-min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/js-polyfills/keyboard.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/treeify@1.0.1/treeify.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js" crossorigin="anonymous"></script>
+
+<script src="scripts/functions.js"></script>
+<script src="scripts/commands.js"></script>
+<script src="scripts/old_index.js"></script>
+
+</body>
+
+</html>
