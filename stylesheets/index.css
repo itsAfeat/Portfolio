@@ -92,8 +92,15 @@ iframe {
 
 h1 {
     text-align: center;
-    margin: 1rem;
-    text-decoration: underline overline;
+    margin: -0.25rem 0rem 0.5rem 0rem;
+}
+
+.topBar {
+    width: 50%;
+}
+
+.botBar {
+    width: 75%;
 }
 
 .pdf {
