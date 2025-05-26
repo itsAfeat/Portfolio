@@ -26,8 +26,10 @@
                 class="active">Oversigt</a>
             <a href="pages/laeringsmaal.htm" id="1" onclick="changePage(this.id)" target="contentFrame">Læringsmål</a>
             <a href="pages/logboeger.htm" id="2" onclick="changePage(this.id)" target="contentFrame">Logbøger</a>
-            <a href="pages/produkter.htm" id="3" onclick="changePage(this.id)" target="contentFrame">Produkter</a>
-            <a href="pages/about.htm" id="4" onclick="changePage(this.id)" target="contentFrame">About</a>
+            <a href="pages/kildeliste.htm" id="3" onclick="changePage(this.id)" target="contentFrame">Kildeliste</a>
+            <a href="pages/produkter.htm" id="4" onclick="changePage(this.id)" target="contentFrame">Produkter</a>
+            <a href="pages/gruppekontrakt.htm" id="5" onclick="changePage(this.id)" target="contentFrame">Gruppekontrakt</a>
+            <a href="pages/about.htm" id="6" onclick="changePage(this.id)" target="contentFrame">About</a>
             <a href="old_index.html" target="_blank">Gamle Portefølje</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
                 <i class="fa fa-bars"></i>
@@ -41,6 +43,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
     <script src="scripts/index.js" type="text/javascript"></script>
+
+    <script>
+        const url = new URL(window.location.href);
+        const startLink = url.searchParams.get("start");
+        const startId = url.searchParams.get("id");
+
+        if (startLink != null && startId != null) {
+            changePage(startId);
+            document.querySelector('iframe[name="contentFrame"]').src = `pages/${startLink}.htm`;
+        }
+    </script>
 </body>
 
 </html>

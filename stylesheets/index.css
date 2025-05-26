@@ -63,7 +63,7 @@ iframe {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     .topnav a:not(:first-child) {
         display: none;
     }
@@ -88,4 +88,16 @@ iframe {
         display: block;
         text-align: left;
     }
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem;
+    text-decoration: underline overline;
+}
+
+.pdf {
+    margin: auto;
+    display: block;
+    width: 95%;
 }

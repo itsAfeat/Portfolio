@@ -13,7 +13,6 @@ function changePage(id) {
     let clicked = document.getElementById(id);
     let clicker = document.querySelector("a.active");
 
-
     try {
         if (clicker.id != id) {
             clicked.classList.add("active");
@@ -22,6 +21,9 @@ function changePage(id) {
     } catch (ex) {
         changePage(id);
     }
+}
+
+function parseLogs() {
 }
 
 VANTA.WAVES({
