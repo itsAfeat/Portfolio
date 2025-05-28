@@ -14,7 +14,7 @@ ville kunne tilføje et ekstra felt kaldet fx. 'Price' hvis værdi vi vil kunne
 indlæse og ændre.
 
 ;tCustom Fields
-;r<img src="projects/Gruppe/CollectionFields.png" style="margin:1em;width:40em;"></img>
+;r<img src="../projects/Gruppe/CollectionFields.png" style="margin:1em;width:40em;"></img>
 
 Vi startede ud med at Tim gik igennem hans APIHelper klasse, hvor det gik op
 for mig, hvor nemt det er at arbejde med API'er, JSON el.lign. takket være
@@ -22,7 +22,7 @@ Dart(I), da der er samtlige officielle packages/biblioteker som fx [[u;#ccc;;]ht
 der gør det muligt, at lave get, post, put eller whatever med kun én metode.\n
 
 ;tPrice field API kode
-;r<img src="projects/Gruppe/LagerAPI1.png" style="margin:1em;width:50em;"></img>
+;r<img src="../projects/Gruppe/LagerAPI1.png" style="margin:1em;width:50em;"></img>
 
 Foroven kan man se koden der henter Price feltets værdi. Da denne kode er
 lige efter hvor alt andet information om pladen hentes, er diverse id'er,
@@ -31,7 +31,7 @@ i vores link på linje 6-7. På linje 8, laves selve kaldet vha. vores link
 og nogle headers som indeholder authorization.\n
 
 ;tAPI header kode
-;r<img src="projects/Gruppe/LagerHeaders.png" style="margin:1em;width:30em;"></img>
+;r<img src="../projects/Gruppe/LagerHeaders.png" style="margin:1em;width:30em;"></img>
 
 Efter dette er det dejligt nemt at få fat i den vha. den indbyggede jsonDecode
 metode som vi giver vores API kald svars "body", som derefter bliver ændret til

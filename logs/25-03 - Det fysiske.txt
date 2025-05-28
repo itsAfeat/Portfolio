@@ -6,7 +6,7 @@
 Endelig kommer jeg til noget der ikke er så... abstrakt(I). Så man har i Vulkan physical og
 logical devices. Den fysiske(II) enhed er dit hardware[2], grafikkortet, den logiske er et
 objekt(III) man bruger til at "interface" med den fysiske[3]. Det er igennem den logiske at,
-man blandt andet laver og arbejder med [[bi;#aaa;;]queues].
+man blandt andet laver og arbejder med <b><i>queues</i></b>.
 
 En applikation vil indsende arbejde(IV), i form af en command buffer, til queues[1], som fung-
 erer lidt som en kanal til GPU. Hver queue tilhører en queue family, som beskriver hvad den

@@ -9,11 +9,11 @@ en depth-texture eller en normal map, man har med at gøre.\n
 
 Da Image Views bare er detaljer om et andet objekt, skal der heldigivis ikke
 laves en masse ekstra funktioner der henter alverdens data, alt der skal br-
-uges er en [[u;#bbb;;]createImageViews] funktion, som skal iterere igennem
+uges er en <u style="color: #bbb;">createImageViews</u> funktion, som skal iterere igennem
 en liste af Images og lave deres tilhørende Image Views.\n
 
 ;tCreate Image Views funktion 1
-;r<img src="projects/Vulkan/imageViewsCreate1.png" style="margin:1em;width:40em;"></img>
+;r<img src="../projects/Vulkan/imageViewsCreate1.png" style="margin:1em;width:40em;"></img>
 
 Her tjekkes der at hverken vores device(I) er NULL, og at der images i vores
 Swap Chain som den kan arbejde med. Derefter resizer den vores liste af Image
@@ -31,20 +31,20 @@ te senere, hvor resize ændre på længden af listen og tilføjer tomme elemente
 til listen.[1][2]\n
 
 ;tCreate Image Views funktion 2
-;r<img src="projects/Vulkan/imageViewsCreate2.png" style="margin:1em;width:40em;"></img>
+;r<img src="../projects/Vulkan/imageViewsCreate2.png" style="margin:1em;width:40em;"></img>
 
 Som altid, så skal der laves en [[ib;#bbb;;]Create Info]! YIIHAAA!!!
 Der bliver sat følgende værdier...\n
 
-\t[[i;#ccc;;]viewType]\t\t→ Om billedet er 1D, 2D, 3D eller en cubemap
-\t[[i;#ccc;;]format]\t\t\t→ Vores Swap Chains image format
-\t[[i;#ccc;;]r,g,b,a]\t\t\t→ Det er muligt, at mappe alle til fx r, her sættes de til "dem selv"
-\t[[i;#ccc;;]aspectMask]\t\t→ En bitmask der specificerer hvilke aspekter af billedet der skal
+\t<i>viewType</i>\t\t→ Om billedet er 1D, 2D, 3D eller en cubemap
+\t<i>format</i>\t\t\t→ Vores Swap Chains image format
+\t<i>r,g,b,a</i>\t\t\t→ Det er muligt, at mappe alle til fx r, her sættes de til "dem selv"
+\t<i>aspectMask</i>\t\t→ En bitmask der specificerer hvilke aspekter af billedet der skal
 \t\t\t\t\t  inkluderes
-\t[[i;#ccc;;]baseMipLevel]\t→ Billedets første mipmap level
-\t[[i;#ccc;;]levelCount]\t\t→ Hvor mange mipmap levels billedet har
-\t[[i;#ccc;;]baseArrayLayer]\t→ Billedets første array layer
-\t[[i;#ccc;;]layerCount]\t\t→ Hvor mange array layers billedet har\n
+\t<i>baseMipLevel</i>\t→ Billedets første mipmap level
+\t<i>levelCount</i>\t\t→ Hvor mange mipmap levels billedet har
+\t<i>baseArrayLayer</i>\t→ Billedets første array layer
+\t<i>layerCount</i>\t\t→ Hvor mange array layers billedet har\n
 
 Til sidst er funktionen vkCreateImageView der laver vores Image View. Det virker
 til at Image Views er endnu en Vulkan specifik ting, jeg fandt en stackoverflow
@@ -58,13 +58,13 @@ Inden vi er helt færdige, så skal vi huske at tilføje vores nye objekter til
 cleanup funktionen...\n
 
 ;tCleanup funktion
-;r<img src="projects/Vulkan/cleanup1.png" style="margin:1em;width:40em;"></img>
+;r<img src="../projects/Vulkan/cleanup1.png" style="margin:1em;width:40em;"></img>
 
 Det er i denne funktion, at alting bliver "ryddet op" diverse objekter, som
 image views og swap chains, logical og physical devices, og selvfølgelig
 programmets surface, instance og vindue.\n
 
-Der er et problem... når jeg kører koden, får jeg en [[i;#bbb;;]read access violation],
+Der er et problem... når jeg kører koden, får jeg en <i style="color: #bbb;">read access violation</i>,
 når jeg resize'er image views vector'en på linje 11, den siger at den prøver
 ;rat tilgå linje RAM adresse <code>0xFFFFFF</code>, hvilket virker meget forkert...
 ;r<br/>

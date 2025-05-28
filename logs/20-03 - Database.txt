@@ -11,20 +11,20 @@ startede jeg ud med, at få lavet domænemodel samt DCD for event appen, og så
 blev lager artefakterne også opdateret samtidigt, nå nu jeg var igang...
 
 ;t\nLager & event domænemodeller
-;r<img src="/projects/Gruppe/LagerDomænemodel.png" style="margin:1em;height:15em;float:left"></img>
-;r<img src="/projects/Gruppe/EventDomænemodel.png" style="margin:1em;height:15em"></img>
+;r<img src="../projects/Gruppe/LagerDomænemodel.png" style="margin:1em;height:15em;float:left"></img>
+;r<img src="../projects/Gruppe/EventDomænemodel.png" style="margin:1em;height:15em"></img>
 ;t\nLager & event DCD
-;r<img src="/projects/Gruppe/LagerDCD.png" style="margin:1em;height:30em;float:left"></img>
-;r<img src="/projects/Gruppe/EventDCD.png" style="margin:1em;height:20em"></img>
+;r<img src="../projects/Gruppe/LagerDCD.png" style="margin:1em;height:30em;float:left"></img>
+;r<img src="../projects/Gruppe/EventDCD.png" style="margin:1em;height:20em"></img>
 
 Samtidigt med dette, fik vi smækket nogle fine wireframes sammen, som Bo (PO)
 ;rsagde, og jeg citerer, <i>"Ej men, det er jo perfekt det der..."</i> efterfulgt
 af et venligt smil/grin, som kun en 40+ årig pladebutik ejer kan give.(I)
 
 ;t\n\nLager app wireframe
-;r<img src="/projects/Gruppe/LagerWireframe.png" style="margin:1em;height:30em"></img>
+;r<img src="../projects/Gruppe/LagerWireframe.png" style="margin:1em;height:30em"></img>
 ;tEvent app wireframe
-;r<img src="/projects/Gruppe/EventWireframe.png" style="margin:1em;height:25em"></img>
+;r<img src="../projects/Gruppe/EventWireframe.png" style="margin:1em;height:25em"></img>
 
 ;r<hr/>
 \t(I) Han lavede endda en joke om, at vi var mere produktive end dem han, før hen,

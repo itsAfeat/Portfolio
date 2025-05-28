@@ -20,7 +20,7 @@ er stadigvæk så tungt, der sker opdatering men med alt den læsning er det sv�
 at holde hovedet "frisk" nok til både at læse/kode i flere timer, og derefter få
 skrevet en logbog omkring, istedet for bare at gå i seng el.lign.
 
-\nDa [[i;#777;;](næsten)] alt mit arbejde i projektet er i Flutter, er det squ hårdt at få
+\nDa <i>(næsten)</i> alt mit arbejde i projektet er i Flutter, er det squ hårdt at få
 sig taget sammen til at sidde med det yderligere efter gruppearbejdet. Dog håber
 jeg at de mere klare optegnet rammer der kommer med sprints'ne medbringer en form
 for separering imellem projekt og ERFA Flutter.
@@ -32,7 +32,7 @@ hjemmebrygget mjød(II), for at få kode-geisten til at flyde igennem mig igen.
 done, alt LaTeX koden for designet er færdigt, nu mangler jeg bare at smide de
 sidste kilder, billeder osv. ind. Det eneste som jeg simpelthen ikke har kunnet
 få mig selv til at kigge på endnu, er læringsmållene. Dog har jeg aftalt med
-nogle gode kammersjukker [[i;#777;;](på tværs af roommates, projekt/klassekammerat, osv.)]
+nogle gode kammersjukker <i>(på tværs af roommates, projekt/klassekammerat, osv.)</i>
 som jeg vil sætte mig ned, og forhåbentligt få spyttet nogle konkrete lærings-
 mål ud med, så alle mine hængepartier samt motivationsniveauet kan ramme ██████████ 100%
 

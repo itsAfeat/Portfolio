@@ -17,7 +17,7 @@ den behøver at returnere en ny instans af en klasse[1]. Forneden ses et eks-
 empel på en singleton klasse i Dart(II).\n
 
 ;tEvent UserRepo singleton
-;r<img src="projects/Gruppe/EventUserRepo.png" style="margin:1em;height:15em"></img>
+;r<img src="../projects/Gruppe/EventUserRepo.png" style="margin:1em;height:15em"></img>
 
 Starter man på linje 15, kan man se at der laves en navngivet privat constructor.
 Det er denne constructor der bruges til at lave vores ene instans på linje 5,
@@ -34,7 +34,7 @@ sluttes inden den næste koden køres. Dette er ikke helt blevet fikset, og er p
 nuværende tidspunkt løst med at have et enkelt init kald i main funktionen.
 
 ;r<hr/>
-;r&ensp;&ensp;&ensp;&ensp;(I)&ensp;&ensp;I <code>C#</code> var dette nemmest gjort ved at lave en [[i;#aaa;;]public static] klasse.
+;r&ensp;&ensp;&ensp;&ensp;(I)&ensp;&ensp;I <code>C#</code> var dette nemmest gjort ved at lave en <i>public static</i> klasse.
 \t(II) Taget fra UserRepo klassen fra Event appen. Alle ekstra dele, som DB forbindelse,
 \t     er fjernet for at gøre eksempelt mere overskueligt.
 ;r<br/><hr/>

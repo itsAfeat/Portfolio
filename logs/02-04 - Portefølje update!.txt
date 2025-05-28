@@ -16,6 +16,6 @@ tekst på sidderne. Forneden ses billeder af litteraturlisten og projekt siden.
 
 ;r<hr/>
 ;t\nLitteraturliste LaTeX & eksempel
-;r<img src="images/litteratur.png" style="margin:1em;height:30em"/>
+;r<img src="../images/litteratur.png" style="margin:1em;height:30em"/>
 ;t\nProjekt side LaTeX & eksempel
-;r<img src="images/projekter.png" style="margin:1em;height:30em"/>
+;r<img src="../images/projekter.png" style="margin:1em;height:30em"/>

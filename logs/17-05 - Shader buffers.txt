@@ -1,4 +1,4 @@
-;tLog #029 - Vulkan buffer
+;tLog #029 - Shader buffers
 ;sNyt kodesprog, yipii (╥﹏╥)
 ;d\n17/05-2025
 ;r<hr/>

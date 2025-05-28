@@ -4,7 +4,7 @@
 
 Så, der var projektvejledning i dag, hvor jeg fik nogle gode vejledninger
 for hvad jeg skal fokusere på. Først er fremmest er der læringsmålene, som
-jeg har planer med Tim om at vi begge sidder [[b;#ccc;;]FYSISK] sammen og få styr på
+jeg har planer med Tim om at vi begge sidder <b>FYSISK</b> sammen og få styr på
 vores mål. Jeg fik nogle fifs til hvad jeg kan gøre for at forbedre min
 portefølje hjemmeside, som var at istedet for at logs hedder "logX - ...",
 at de bare bruger deres dato som navnet, hvilket er helt forståeligt. Jeg

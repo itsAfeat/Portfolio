@@ -20,23 +20,23 @@ fjernet det irriterende overflow der ville komme en warning om når man bl.a.
 brugte tasteturet...\n
 
 ;tLogin skræm med og uden overflow
-;r<img src="projects/Gruppe/EventLoginKeyboard.png" style="margin:1em;width:10em;float:left"></img>
-;r<img src="projects/Gruppe/LagerLoginKeyboard.png" style="margin:1em;width:10em"></img>
+;r<img src="../projects/Gruppe/EventLoginKeyboard.png" style="margin:1em;width:10em;float:left"></img>
+;r<img src="../projects/Gruppe/LagerLoginKeyboard.png" style="margin:1em;width:10em"></img>
 
 ;rDette blev gjort ved at gøre skærmen resizeable vha. en <code>SingleChildScrollView</code>
 ;r<code>widget</code>, og ved at sætte vores <code>Scaffolds</code> <code>resizeToAvoidBottomInset</code> attribut til
 ;r<code>false</code>, som man kan se neden under...\n
 
 ;tKeyboard fix kode
-;r<img src="projects/Gruppe/LagerKeyboardFix.png" style="margin:1em;width:40em"></img>
+;r<img src="../projects/Gruppe/LagerKeyboardFix.png" style="margin:1em;width:40em"></img>
 
 Udover det, så lagde vi mærke til i vores API kald, fik vi et billede link.
 Dette link kunne vi konverterer til byte liste, som vi kunne indlæse som et
 billede...\n
 
 ;tVinyl billede eksempler
-;r<img src="projects/Gruppe/LagerAPI2.png" style="margin:1em;width:10em;float:left"></img>
-;r<img src="projects/Gruppe/LagerAPI3.png" style="margin:1em;width:10em"></img>
+;r<img src="../projects/Gruppe/LagerAPI2.png" style="margin:1em;width:10em;float:left"></img>
+;r<img src="../projects/Gruppe/LagerAPI3.png" style="margin:1em;width:10em"></img>
 
 ;r<hr/>
 \t(I)  Alt den API bøvl må ha' gjort mig træt
