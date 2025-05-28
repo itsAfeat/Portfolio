@@ -1,0 +1,14 @@
+;tLog #031 - Ny portefølje
+;sNu med top navigations bar
+;d\n22/05-2025 → 24/05-2025
+
+HERE IT IS! Jeg fik endelig bikset en hurtig ny portefølje sammen. Dette har
+dog medført, at ikke alting (som logs'ne) er det pæneste, men den er funktio-
+nel, og vigtigst af alt, så kan den afleveres. Jeg fik sat den op, så der er
+en hovedside (index.html) som har en iframe der viser de forskellige undersi-
+sider, jeg tænkte selvfølgelig ikke over, at man skal kunne linke til de ind-
+ividuelle sider med logbøger, læringsmål osv... løsningen er, at man i URL'en
+kan tilføje parametre til linket som tager en til de forskellige sider.
+Et eksempel kan fx være...\n
+\t https://itsafeat.github.io/Portfolio/?start=kildeliste&id=3
+for at tage en direkte til kildelisten.

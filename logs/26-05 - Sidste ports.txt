@@ -1,0 +1,16 @@
+;tLog #032 - Sidste ports
+;sFandme noget møj nå alt er lavet til noget andet
+;d\n26/05-2025 → 27/05-2025
+;r<hr/>
+
+Så, planen var at omskrive min log parser så den virker med den nye side,
+at importere læringsmålene og projekt siden som rå HTML, og så beholde min
+kildeliste som PDF, jeg bare tilføjer til siden. Jeg skal selvfølgelig st-
+adigvæk ha' lavet videon der skal linkes med.\n
+
+Jeg blev endelig færdig med logparseren, problemet er dog bare at mange
+af billede links'ne ikke fungere længere, men det kan hurtigt fikses. Jeg
+ved kan dog godt mærke at jeg har brug for en pause, mit hoved banker, jeg
+sover ikke så godt, så jeg glæder mig satme til at alt det her er ovre.\n\n
+
+Kan endda se på mine logbøger at jeg snart ikke har mere i mig.
