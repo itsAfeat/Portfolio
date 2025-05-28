@@ -13,8 +13,8 @@ fået lavet en fin domænemodel samt DCD(I) over hvordan man kunne gemme diverse
 plader og deres info, disse artefakter ses forneden.
 
 ;t\nDomænemodel & DCD
-;r<img src="/projects/Gruppe/Domænemodel_old.png" style="margin:1em;height:30em;float:left"></img>
-;r<img src="/projects/Gruppe/DCD_old.png" style="margin:1em;height:30em"></img>
+;r<img src="../projects/Gruppe/Domænemodel_old.png" style="margin:1em;height:30em;float:left"></img>
+;r<img src="../projects/Gruppe/DCD_old.png" style="margin:1em;height:30em"></img>
 
 Vi har samtidigt fået lavet et fint Scrum board, hvor vi har fået lavet nogle små
 opgaver, for at få os sparket igang, som wireframe og DB diagramer.
