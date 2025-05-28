@@ -8,5 +8,5 @@
 ;r<br/><hr/>
 \t[1] "Shaders" - LearnOpenGL
 \t    ...
-\t    [[i;#ccc;;]Fundet ved at søge "Basic GLSL tutorial"]
+\t    <i>[Fundet ved at søge "Basic GLSL tutorial"]</i>
 \t    [ https://learnopengl.com/getting-started/shaders ]
