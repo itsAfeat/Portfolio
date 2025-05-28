@@ -1,12 +1,18 @@
 ;tLog #029 - Vulkan buffer
-;s
+;sNyt kodesprog, yipii (╥﹏╥)
 ;d\n17/05-2025
 ;r<hr/>
+
+Så... nuværende plan er, at jeg skal ha' lavet nogle shaders til mit vulkan
+program, Vulkan bruger GLSL, så planen er vel at lære det... I guess. Uh,
+og så skal jeg ha' lavet noget kode der kan indlæse min shader kode så den
+bruges i programmet.
 
 ;r<hr/>
 \t(I)
 ;r<br/><hr/>
 \t[1] "Shaders" - LearnOpenGL
-\t    ...
+\t    Selvom hjemmesiden overall er egnet til at lære OpenGL, så fungerer denne specifikke
+\t    side rimelig god, da den bare forklare hvordan GLSL fungere.
 \t    <i>[Fundet ved at søge "Basic GLSL tutorial"]</i>
 \t    [ https://learnopengl.com/getting-started/shaders ]
