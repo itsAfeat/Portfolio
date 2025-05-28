@@ -1,6 +1,6 @@
 ;tLog #011 (Gruppe) - Kanban boards & sprints!
 ;sIntet er mere motiverende end samlet demotivation
-;d\n09-04-2025
+;d\n09/04-2025
 ;r<hr/>
 
 Efter en god snak med resten af gruppen, kom vi til den fælles konklusion at,

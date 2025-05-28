@@ -1,6 +1,6 @@
 ;tLog #009 (Portefølje) - LaTeX-MeX!
 ;sMin ærlige reaktion til WYSIWYG -> >:(
-;d\n02-04-2025
+;d\n02/04-2025
 ;r<hr/>
 
 Så efter at ha' set de andres porteføljer gik det op for mig, at jeg mangler

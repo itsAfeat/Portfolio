@@ -1,7 +1,7 @@
 ;tLog #007 (Gruppe) - Home skærm og custom knapper
 ;sHvorfor er der ingen af disse widgets der matcher vores wireframe :((
-;d\n24-03-2025
+;d\n24/03-2025
 ;r<hr/>
 
 ;r<p style="float:left">Efter at ha' splittet os ud i to hold, en til Event- og en til lager-appen,<br/>besluttede vi os for, at starte ud med Home skærmen for hver app. Dog, stødte<br/>vi på et problem, da vi hverken kunne finde knapper eller navbars der lignede<br/>dem vi havde i vores Wireframe. Så vi måtte vel lave vores egen, resultatet<br/>kan ses til højre...</p>
-;r<img src="projects/Gruppe/EventAppHome.png" style="margin:1em;height:30em;float:right"></img>
+;r<img src="/projects/Gruppe/EventAppHome.png" style="margin:1em;height:30em;float:right"></img>

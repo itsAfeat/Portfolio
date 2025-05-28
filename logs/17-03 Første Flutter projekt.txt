@@ -40,7 +40,7 @@ undgå at compileren misforstår hvad det er for en datatype jeg egentlig vil ha
 ;t\nEn custom widget/component
 ;r<img src="/projects/Flutter/BabysFirstFlutter/BigCard.png" style="margin:1em;height:20em"/>
 
-Her ses en simpel [[i;#e81416;;]c][[i;#ffa500;;]u][[i;#faeb36;;]s][[i;#79c314;;]t][[i;#487de7;;]o][[i;#4b369d;;]m] widget/component... den laver egentlig bare en størrer
+Her ses en simpel custom widget/component... den laver egentlig bare en størrer
 udgave af Card widget'en, med noget ekstra padding, og så selvfølgelig bruger den
 [[u;#ddd;;]WordPair] til dens indhold istedet.
 

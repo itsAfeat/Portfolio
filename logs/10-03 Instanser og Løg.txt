@@ -13,7 +13,7 @@ igennem den, at man opsætter sin applikation(III), får fat på ting som hardwa
 laver og manager layers samt extensions mm.
 
 ;r<br/>
-;rHele projektet kan findes på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Vulkan-Swagkant" target="_blank">Github</a>...
+;rHele projektet kan findes på min <a style="color:blue;" href="https://github.com/itsAfeat/Vulkan-Swagkant" target="_blank">Github</a>...
 
 ;r<hr/>
 \t(I)   Ofte kaldet Validation Layers
