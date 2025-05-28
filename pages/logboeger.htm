@@ -1,8 +1,40 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../stylesheets/index.css" />
 </head>
 
-<hr class="topBar" />
-<h1>Logbøger</h1>
-<hr class="botBar" />
+<body style="overflow: auto;">
+
+    <hr class="topBar" />
+    <h1>Logbøger</h1>
+    <hr class="botBar" />
+
+    <div id="logDiv">
+    </div>
+    <!-- <button type="button" class="collapsible">Collapsible</button>
+    <div class="col-content">
+        <p id="tis">Schwag</p>
+    </div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery" crossorigin="anonymous"></script>
+    <script src="../scripts/logs.js"></script>
+    <script>
+        $.ajax({
+            url: `${apiUrl}logs/`,
+            type: "GET",
+            success: data => {
+                logFNames = [];
+                String(data).substring(0, data.length - 1).split(';').forEach(d => {
+                    logFNames.push(d);
+                })
+                logFNames.sort((a, b) => { return getLogNum(a) - getLogNum(b); });
+                initLogs();
+            },
+            error: err => {
+                console.error("Error fetching logs: ", err);
+            }
+        });
+    </script>
+
+</body>

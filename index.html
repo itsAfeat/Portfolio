@@ -22,13 +22,16 @@
 <body id="wave">
     <div class="box">
         <div class="header topnav">
+            <a href="https://github.com/itsAfeat/" target="_blank" id="topnavIcon"><i class="fa-solid fa-terminal"></i>
+                Portefølje</a>
             <a href="pages/oversigt.htm" id="0" onclick="changePage(this.id)" target="contentFrame"
                 class="active">Oversigt</a>
-            <a href="pages/laeringsmaal.htm" id="1" onclick="changePage(this.id)" target="contentFrame">Læringsmål</a>
-            <a href="pages/logboeger.htm" id="2" onclick="changePage(this.id)" target="contentFrame">Logbøger</a>
+            <a href="pages/logboeger.htm" id="1" onclick="changePage(this.id)" target="contentFrame">Logbøger</a>
+            <a href="pages/laeringsmaal.htm" id="2" onclick="changePage(this.id)" target="contentFrame">Læringsmål</a>
             <a href="pages/kildeliste.htm" id="3" onclick="changePage(this.id)" target="contentFrame">Kildeliste</a>
             <a href="pages/produkter.htm" id="4" onclick="changePage(this.id)" target="contentFrame">Produkter</a>
-            <a href="pages/gruppekontrakt.htm" id="5" onclick="changePage(this.id)" target="contentFrame">Gruppekontrakt</a>
+            <a href="pages/gruppekontrakt.htm" id="5" onclick="changePage(this.id)"
+                target="contentFrame">Gruppekontrakt</a>
             <a href="pages/about.htm" id="6" onclick="changePage(this.id)" target="contentFrame">About</a>
             <a href="old_index.html" target="_blank">Gamle Portefølje</a>
             <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
@@ -45,6 +48,7 @@
     <script src="scripts/index.js" type="text/javascript"></script>
 
     <script>
+        // Added posibility to load page from link params
         const url = new URL(window.location.href);
         const startLink = url.searchParams.get("start");
         const startId = url.searchParams.get("id");
@@ -53,6 +57,18 @@
             changePage(startId);
             document.querySelector('iframe[name="contentFrame"]').src = `pages/${startLink}.htm`;
         }
+
+        // Add background waves
+        VANTA.WAVES({
+            el: "#wave",
+            mouseControls: true,
+            touchControls: false,
+            gyroControls: true,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
+        });
     </script>
 </body>
 

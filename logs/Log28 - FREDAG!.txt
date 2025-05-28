@@ -9,7 +9,7 @@ spørgsmål. Min specifikke prompt var...
 
 ;r<blockquote>Kan du skrive nogle refleksions spørgsmål for en et uges sprint. For kontekst er det til en logbog for et selvstudie semester på en datamatiker uddanelse.</blockquote>
 
-;r<h4 style="color:#fff"><b>Refleksions QnA</b></h4>
+;r<h4 style="color:#000"><b>Refleksions QnA</b></h4>
 ;r<q>Hvad var målet med denne uges sprint, og nåede jeg det?</q>
 \t- Generelt er målet vel, at få taget mig sammen i forh. til mine mangler med portef-
 \t  øljen, men for at jeg kan gøre det, er jeg nød til at få lavet mig en ordentlig,

@@ -21,18 +21,8 @@ function changePage(id) {
     } catch (ex) {
         changePage(id);
     }
-}
 
-function parseLogs() {
+    if (`${id}` == '2') {
+        
+    }
 }
-
-VANTA.WAVES({
-    el: "#wave",
-    mouseControls: true,
-    touchControls: false,
-    gyroControls: true,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00
-})

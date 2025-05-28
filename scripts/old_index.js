@@ -28,10 +28,10 @@ $(document).ready(() => {
                 let log = logFNames[i];
 
                 fetch(`logs/${log}`)
-                .then(r => r.text())
-                .then(text => {
-                    logContent[i] = text;
-                });
+                    .then(r => r.text())
+                    .then(text => {
+                        logContent[i] = text;
+                    });
             }
 
             let logsText = document.getElementById('logsText')

@@ -63,7 +63,7 @@ iframe {
     display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
     .topnav a:not(:first-child) {
         display: none;
     }
@@ -90,6 +90,15 @@ iframe {
     }
 }
 
+#topnavIcon {
+    font-weight: bolder;
+}
+
+#topnavIcon:hover {
+    background-color: #333;
+    color: #f2f2f2;
+}
+
 h1 {
     text-align: center;
     margin: -0.25rem 0rem 0.5rem 0rem;
@@ -107,4 +116,70 @@ h1 {
     margin: auto;
     display: block;
     width: 95%;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.collapsible::after {
+    content: '\002b';
+    font-weight: bold;
+    float: right;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.col-active,
+.collapsible:hover {
+    background-color: #ccc;
+}
+
+.col-active::after {
+    content: "\2212";
+    font-weight: bold;
+    float: right;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.col-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+blockquote::before {
+    font-weight: bold;
+    content: '\201C';
+}
+
+blockquote::after {
+    font-weight: bold;
+    content: '\201D';
+}
+
+q {
+    font-style: oblique;
+}
+
+q::before {
+    content: '\201C';
+}
+
+q::after {
+    content: '\201D';
 }

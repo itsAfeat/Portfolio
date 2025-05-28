@@ -108,8 +108,8 @@ function parseLog(index, parseNewline = true) {
 
             l = (parseNewline ? l.replaceAll('\\n', '\n') : l).replaceAll('\\t', '\t');
             l = l.replace(/\[(\d+)\]/g, (_match, number) => {
-                    return isRaw ? `<b style="color:white;">{${number}}</b>` : `[[b;#fff;;]{${number}}]`;
-                })
+                return isRaw ? `<b style="color:white;">{${number}}</b>` : `[[b;#fff;;]{${number}}]`;
+            })
                 .replace(/\(([IVXLCDM]+)\)/g, (match, _number) => {
                     return isRaw ? `<b style="color:white;">${match}</b>` : `[[b;#fff;;]${match}]`;
                 });
