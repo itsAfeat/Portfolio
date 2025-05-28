@@ -9,7 +9,7 @@ collapsibles, så istedet for at man skal trykke så pokkers meget rundt, så
 kan man stadigvæk trykke meget, men med collapsibles istedet hvilket gør
 det nemmere... tænker jeg.\n
 
-Problemet er, jeg har brugt et bibliotek kaldet '[[i;#aaa;;]jQuery Terminal]'[1], hvori
+Problemet er, jeg har brugt et bibliotek kaldet '<i>jQuery Terminal</i>'[1], hvori
 ;rder er en <code>echo</code> kommando, som jeg har brugt til at printe teksten ud i min
 "terminal". Hvis jeg skal lave collapsibles skal jeg få den til at printe
 ;rrå <code>HTML</code> kode, som jeg så kan printe ind i min collapsibles content <code>div</code>
@@ -27,7 +27,7 @@ jeg har brugt alt for lang tid på den, til at ville sidde en hel nat og
 ;r<br/>
 
 ;tCollapsibles kode 1
-;r<img src="projects/Portefølje/logCollapsibles1.png" style="margin:1em;width:60em;"></img>
+;r<img src="../projects/Portefølje/logCollapsibles1.png" style="margin:1em;width:60em;"></img>
 
 Linje 88 og 89 er mest bare udseende, så det ser lidt pænere ud :)). Jeg
 ;rnærstuderede <code>HTML</code> koden efter en echo og så at hver linje har en inkrem-
@@ -35,21 +35,21 @@ Linje 88 og 89 er mest bare udseende, så det ser lidt pænere ud :)). Jeg
 ;r<br/>
 
 ;tHTML koden med inspector åben
-;r<img src="projects/Portefølje/dataIndex.png" style="margin:1em;width:25em;"></img>
+;r<img src="../projects/Portefølje/dataIndex.png" style="margin:1em;width:25em;"></img>
 
 Jeg tænkte, at jeg kunne bruge den index til at finde hvilke linjer jeg
 skal rykke på, hvilket er de indexs der findes på linje 94 - 97. På li-
 nje 99 startes for loopet der går igennem alle index tallene.\n
 
 ;tCollapsibles kode 2
-;r<img src="projects/Portefølje/logCollapsibles2.png" style="margin:1em;width:30em;"></img>
+;r<img src="../projects/Portefølje/logCollapsibles2.png" style="margin:1em;width:30em;"></img>
 
 Inden linjerne kan rykkes på, skal newline(II) ændres til <br/> breaks.
 Der tages højde for, om newline'en er i starten eller i slutningen af
 sætningen. På linje 113 ses koden der rykker på linjen.\n
 
 ;tCollapsibles kode 3
-;r<img src="projects/Portefølje/logCollapsibles3.png" style="margin:1em;width:30em;"></img>
+;r<img src="../projects/Portefølje/logCollapsibles3.png" style="margin:1em;width:30em;"></img>
 
 Til sidst bliver en click event tilføjet til hver knap med "collapsible"
 klassen. Denne click event sørger for at indholdet vises/skjules, hvor-

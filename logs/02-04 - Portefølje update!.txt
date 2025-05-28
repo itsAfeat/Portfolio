@@ -6,7 +6,7 @@
 Så efter at ha' set de andres porteføljer gik det op for mig, at jeg mangler
 nogle ting...
 
-\n[[ub;#aaa;;]TODO]
+\n<u><b>TODO</b></u>
 \t( ) - Få lavet en samlet litteraturliste (PDF)
 \t( ) - Mix op en banger projekt liste ting (...PDF)
 \t( ) - Tage mig sammen, og få opdateret mine læringsmål (også PDF)

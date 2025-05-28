@@ -13,9 +13,9 @@ på alle min logs, dog vil de alle sammen kræve at jeg på forhånden læser
 mine filer og trækker dato feltet ud af dem :(\n
 
 Umiddelbart lyder min plan for ugen således...
-\t[[i;#bbb;;]Tirsdag]\t- Flutter API med Tim
-\t[[i;#bbb;;]Onsdag]\t- Læringsmål og portefølje opdateringer
-\t[[i;#bbb;;]Torsdag]\t- Vulkan
-\t[[i;#bbb;;]Fredag]\t- Refleksioner
-\t[[i;#bbb;;]Lørdag]\t- Buffer dag
-\t[[i;#bbb;;]Søndag]\t- Buffer dag
+\t<i>Tirsdag</i>\t- Flutter API med Tim
+\t<i>Onsdag</i>\t- Læringsmål og portefølje opdateringer
+\t<i>Torsdag</i>\t- Vulkan
+\t<i>Fredag</i>\t- Refleksioner
+\t<i>Lørdag</i>\t- Buffer dag
+\t<i>Søndag</i>\t- Buffer dag

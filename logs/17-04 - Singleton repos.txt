@@ -11,8 +11,8 @@ alle repos på tværs af hele projektet, samtidigt med at det løser det origi-
 nale problem vi sad med, som var at sørge for at det altid var den samme in-
 stanse af et repo, med andre ord, at vi kan få fat i vores data.
 
-\nDet er ikke muligt, at gøre en klasse [[i;#aaa;;]static] i Dart... man kan dog, vha.
-noget smart kaldet [[i;#ccc;;]factory], der bla. lader en lave en constructor uden at,
+\nDet er ikke muligt, at gøre en klasse <i>static</i> i Dart... man kan dog, vha.
+noget smart kaldet <i>factory</i>, der bla. lader en lave en constructor uden at,
 den behøver at returnere en ny instans af en klasse[1]. Forneden ses et eks-
 empel på en singleton klasse i Dart(II).\n
 

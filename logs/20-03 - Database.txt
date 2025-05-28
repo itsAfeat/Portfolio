@@ -17,9 +17,10 @@ blev lager artefakterne også opdateret samtidigt, nå nu jeg var igang...
 ;r<img src="../projects/Gruppe/LagerDCD.png" style="margin:1em;height:30em;float:left"></img>
 ;r<img src="../projects/Gruppe/EventDCD.png" style="margin:1em;height:20em"></img>
 
-Samtidigt med dette, fik vi smækket nogle fine wireframes sammen, som Bo (PO)
-;rsagde, og jeg citerer, <i>"Ej men, det er jo perfekt det der..."</i> efterfulgt
-af et venligt smil/grin, som kun en 40+ årig pladebutik ejer kan give.(I)
+
+<p>Samtidigt med dette, fik vi smækket nogle fine wireframes sammen, som Bo (PO)
+sagde, og jeg citerer, <i>"Ej men, det er jo perfekt det der..."</i> efterfulgt
+af et venligt smil/grin, som kun en 40+ årig pladebutik ejer kan give.(I)</p>
 
 ;t\n\nLager app wireframe
 ;r<img src="../projects/Gruppe/LagerWireframe.png" style="margin:1em;height:30em"></img>

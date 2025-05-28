@@ -1,5 +1,5 @@
 ;tLog #010 (Misc) - IT-DAY!
-;sSå meget gratis [[i;#aaa;;]stuff]
+;sSå meget gratis <i>stuff</i>
 ;d\n03/04-2025
 ;r<hr/>
 

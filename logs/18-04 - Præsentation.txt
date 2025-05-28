@@ -3,14 +3,14 @@
 ;d\n18/04-2025
 ;r<hr/>
 
-Det er gået op for mig, at jeg ikke har haft et [[bi;#ddd;;]eneste] kode eksempel med
+Det er gået op for mig, at jeg ikke har haft et <b><i>eneste</i></b> kode eksempel med
 Vulkan. Det skal jeg ha' rettet op på, så denne log kommer til at være lidt
 længere med en masse kode. Beklager på forhånd...\n
 
 Idag valgte jeg, at forhåbentligt få nærme mig noget visuelt med Vulkan.
 Rigtig meget af semesteret er gået på, at prøve at forstå Vulkan og dets
 mange særheder i forhold til mange andre API, som OpenGL. En af disse
-spøjse ting er, at Vulkan ikke har en "[[i;#aaa;;]default framebuffer]" som mange an-
+spøjse ting er, at Vulkan ikke har en "<i>default framebuffer</i>" som mange an-
 dre API har. Det er her Vulkans Swap Chain kommer ind i billedet, da det
 er den der holder styr på de diverse buffers, inden de bliver vist til
 skærmen. Den fungere som en kø af billeder og har som regelt til ansvar
@@ -26,8 +26,8 @@ at se om den man leder efter er tilstede. Dette kan ses på billedet forneden...
 ;r<img src="../projects/Vulkan/extensionCheck.png" style="margin:1em;height:15em"></img>
 
 På linje 5 og 6, hentes alle understøttede extensions, som gemmes i
-[[b;#aaa;;]availableExtensions] listen. Der laves derefter en sorteret liste ud-
-fra de ønskede extensions(II) kaldet [[b;#aaa;;]requiredExtensions]. Herefter
+<b>availableExtensions</b> listen. Der laves derefter en sorteret liste ud-
+fra de ønskede extensions(II) kaldet <b>requiredExtensions</b>. Herefter
 går den slavisk igennem alle tilgængelige extensions, og prøver at
 slette dem fra vores påkrævede extensions. Til sidst tjekkes der om
 listen af påkrævede extensions er tom, da det vil betyde at den er
@@ -70,9 +70,9 @@ Starter vi ved vores surface format, så tager den en liste af
 Surface Formats(IV), som den så tjekker igennem for vores øn-
 skede format og colorspace, som i dette tilfælde er...\n
 
-\t<i>VK_FORMAT_B8G8R8A8_SRGB</i>          → Vi gemmer farver i en BGRA rækkefølge med en 8-bit unsigned int
+\t<i><b>VK_FORMAT_B8G8R8A8_SRGB</i></b>          → Vi gemmer farver i en BGRA rækkefølge med en 8-bit unsigned int
 \t                                   for hver af dem hvilket giver os 32-bits pr. pixel.
-\t<i>VK_COLORSPACE_SRGB_NONLINEAR_KHRv → SRGB virker til at være standarden inden for billeder, og dette
+\t<i><b>VK_COLORSPACE_SRGB_NONLINEAR_KHRv</i></b> → SRGB virker til at være standarden inden for billeder, og dette
 \t                                   <i>flag</i>, som det hedder, bruges til at finde ud af om det er understøttet.
 
 \nFor vores Present Mode, har jeg valgt at gå med Mailbox, da

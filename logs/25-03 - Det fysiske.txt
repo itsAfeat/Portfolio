@@ -16,7 +16,7 @@ Indtil videre, har jeg blot fået sat op de to devices, en surface hvorpå det h
 ulle blive vist på et tidspunkt, og lavet en funktion der får fat i alle graphics queues.
 
 ;r<br/>
-;rSom altid kan hele projektet blive fundet på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Vulkan-Swagkant" target="_blank">Github</a>...
+;rSom altid kan hele projektet blive fundet på min <a href="https://github.com/itsAfeat/Vulkan-Swagkant" target="_blank">Github</a>...
 Jeg er igang med, at lave addition til porteføljet, hvorigennem alle projekt links osv. vil
 blive samlet.
 

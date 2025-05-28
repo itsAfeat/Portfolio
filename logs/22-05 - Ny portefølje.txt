@@ -9,6 +9,6 @@ en hovedside (index.html) som har en iframe der viser de forskellige undersi-
 sider, jeg tænkte selvfølgelig ikke over, at man skal kunne linke til de ind-
 ividuelle sider med logbøger, læringsmål osv... løsningen er, at man i URL'en
 kan tilføje parametre til linket som tager en til de forskellige sider.
-Et eksempel kan fx være...\n
+Et eksempel kan fx være...
 \t https://itsafeat.github.io/Portfolio/?start=kildeliste&id=3
 for at tage en direkte til kildelisten.

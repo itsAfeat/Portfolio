@@ -55,7 +55,7 @@ i ChangeNotifier'en (MainAppState), og lytter efter om den bliver trykket på.
 Hvis den gør, fjerner den elementet fra listen.
 
 ;r<br/>
-;rHele projektet kan findes på min <a style="color:aquamarine;" href="https://github.com/itsAfeat/Babys-First-Flutter" target="_blank">Github</a>...
+;rHele projektet kan findes på min <a href="https://github.com/itsAfeat/Babys-First-Flutter" target="_blank">Github</a>...
 
 ;r<hr/>
 ;r&ensp;&ensp;&ensp;&ensp;(I)&ensp;&ensp;Ignorer at der står "Kedelig Klikker", det er en <s>tastefejl</s> reference til senere ¯\_(ツ)_/¯

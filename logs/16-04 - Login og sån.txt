@@ -28,7 +28,7 @@ logger ind, og derfra så kommer ind til selve appen.
 \t(I)   Ting som repos og modeler, samt noget basal indlæsning af data fra DB'en, og
 \t      selvfølgelig noget til at tjekke den indskrevne data.
 \t(II)  Er det overhovedet et ord?
-\t(III) For nu er den [[b;#aaa;;]false] som standard
+\t(III) For nu er den <b>false</b> som standard
 ;r<br/><hr/>
 ;tKilder
 \t[1] "ValueNotifier<T> class"

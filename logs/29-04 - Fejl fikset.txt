@@ -3,7 +3,7 @@
 ;d\n29/04-2025
 ;r<hr/>
 
-[[i;#aaa;;]"Idag skal jeg ha' fikset mit Vulkan problem"] er hvad jeg startede dagen
+<i>"Idag skal jeg ha' fikset mit Vulkan problem"</i> er hvad jeg startede dagen
 med at sige til mig selv. Jeg har siden sidst, fået googlet(I) rundt, og
 som flere nævnte på sider som stackoverflow, så har Vulkan sine Validation
 Layers, som jeg jo også har sat op! Problemet er bare, at de ikke rigtig

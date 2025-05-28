@@ -1,4 +1,5 @@
 ;tLog #018 (Vulkan) - IMAGE VIEWS!
+;sSmarte c++
 ;d\n24/04-2025
 ;r<hr/>
 
@@ -9,7 +10,7 @@ en depth-texture eller en normal map, man har med at gøre.\n
 
 Da Image Views bare er detaljer om et andet objekt, skal der heldigivis ikke
 laves en masse ekstra funktioner der henter alverdens data, alt der skal br-
-uges er en <u style="color: #bbb;">createImageViews</u> funktion, som skal iterere igennem
+uges er en <u>createImageViews</u> funktion, som skal iterere igennem
 en liste af Images og lave deres tilhørende Image Views.\n
 
 ;tCreate Image Views funktion 1
@@ -22,7 +23,7 @@ Views. En lille side note omkring resize, jeg undrede mig over hvad forbrugs
 tilføje data til den med push_back metoden uden at skulle resize den. Så...
 ;rjeg lavede et hurtigt lille <code>C++</code> program til at tjekke hastighedsforskellen,
 resultatet kan ses herunder.
-;r<img src="projects/Vulkan/resizeBenchmark.png" style="margin:1em;width:20em"></img>
+;r<img src="../projects/Vulkan/resizeBenchmark.png" style="margin:1em;width:20em"></img>
 Der virker også til at være en metode kaldet reserve, der ændre på en Vectors
 capacity der er hvor mange elementer der er allokeret plads til. De virker m-
 eget ens, men efter at ha' googlet lidt (og snakket med ChatGPT), fandt jeg
@@ -33,7 +34,7 @@ til listen.[1][2]\n
 ;tCreate Image Views funktion 2
 ;r<img src="../projects/Vulkan/imageViewsCreate2.png" style="margin:1em;width:40em;"></img>
 
-Som altid, så skal der laves en [[ib;#bbb;;]Create Info]! YIIHAAA!!!
+Som altid, så skal der laves en <i><b>Create Info</b></i>! YIIHAAA!!!
 Der bliver sat følgende værdier...\n
 
 \t<i>viewType</i>\t\t→ Om billedet er 1D, 2D, 3D eller en cubemap
@@ -64,7 +65,7 @@ Det er i denne funktion, at alting bliver "ryddet op" diverse objekter, som
 image views og swap chains, logical og physical devices, og selvfølgelig
 programmets surface, instance og vindue.\n
 
-Der er et problem... når jeg kører koden, får jeg en <i style="color: #bbb;">read access violation</i>,
+Der er et problem... når jeg kører koden, får jeg en <i>read access violation</i>,
 når jeg resize'er image views vector'en på linje 11, den siger at den prøver
 ;rat tilgå linje RAM adresse <code>0xFFFFFF</code>, hvilket virker meget forkert...
 ;r<br/>
