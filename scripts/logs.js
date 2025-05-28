@@ -52,7 +52,7 @@ function initLogs() {
 // Functions
 async function parseLog(logName) {
     if (logContent[logName] == undefined) {
-        let result = await (await fetch(`/logs/${logName}`)).text();
+        let result = await (await fetch(`../logs/${logName}`)).text();
         logContent[logName] = result;
         return result;
 
