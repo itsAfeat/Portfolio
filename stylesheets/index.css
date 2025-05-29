@@ -104,6 +104,14 @@ h1 {
     margin: -0.25rem 0rem 0.5rem 0rem;
 }
 
+h2 {
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: x-large;
+}
+
 .topBar {
     width: 50%;
 }
@@ -182,4 +190,9 @@ q::before {
 
 q::after {
     content: '\201D';
+}
+
+
+.productP {
+    font-size: large;
 }
