@@ -50,7 +50,7 @@ hellere lade den ligge på Github'en. Men her er den anden side i programmet.
 ;t\nFavourites siden
 ;r<img src="../projects/Flutter/BabysFirstFlutter/Favoriter.png" style="margin:1em;height:20em;"/>
 
-Alt der sker her, er den viser alle elementer fra [[iu;#ddd;;]favs] listen, som ligger inde
+Alt der sker her, er den viser alle elementer fra <i><u>favs</u></i> listen, som ligger inde
 i ChangeNotifier'en (MainAppState), og lytter efter om den bliver trykket på.
 Hvis den gør, fjerner den elementet fra listen.
 
@@ -59,7 +59,7 @@ Hvis den gør, fjerner den elementet fra listen.
 
 ;r<hr/>
 ;r&ensp;&ensp;&ensp;&ensp;(I)&ensp;&ensp;Ignorer at der står "Kedelig Klikker", det er en <s>tastefejl</s> reference til senere ¯\_(ツ)_/¯
-\t(II) Ignorer også, at jeg bruger [[iu;#ddd;;]var] hvilket egentlig modsiger hvad jeg lige har sagt/skrevet
+\t(II) Ignorer også, at jeg bruger <i><u>var</u></i> hvilket egentlig modsiger hvad jeg lige har sagt/skrevet
 
 ;r<br/><hr/>
 ;tKilder
